@@ -1,0 +1,92 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 38% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 28 51% 24%;
+    --primary-foreground: 40 38% 97%;
+
+    --secondary: 30 30% 85%;
+    --secondary-foreground: 28 51% 24%;
+
+    --muted: 30 30% 90%;
+    --muted-foreground: 30 10% 40%;
+
+    --accent: 270 50% 37%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 20% 80%;
+    --input: 30 20% 80%;
+    --ring: 28 51% 24%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-wolf-brown;
+  }
+}
+
+@layer components {
+  .product-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .section-title {
+    @apply text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-wolf-brown relative inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-1 bg-wolf-green opacity-70 rounded;
+  }
+}
+
+/* Remove App.css styles that might conflict with our responsive design */
+#root {
+  @apply w-full max-w-full m-0 p-0;
+}
+
+/* Make images responsive by default */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* Improve touch targets on mobile */
+button, 
+a {
+  @apply min-h-[44px] md:min-h-[unset];
+}
+
+/* Add smooth scrolling */
+html {
+  @apply scroll-smooth;
+}
