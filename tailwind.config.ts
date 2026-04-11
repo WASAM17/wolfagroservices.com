@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -63,15 +65,23 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Wolf Agro custom colors
+				// Wolf Agro premium palette
 				wolf: {
-					'brown': '#8B4513',
-					'tan': '#D2B48C',
+					'dark-green': '#1A3A2A',
+					'green': '#1F5C3E',
+					'green-light': '#2D7A56',
+					'sand': '#C9A96E',
+					'sand-light': '#E8D5B0',
+					'beige': '#F5EFE2',
+					'cream': '#FAFAF7',
+					'dark': '#111827',
+					'gray': '#6B7280',
+					// backward compat
+					'brown': '#1A3A2A',
+					'tan': '#C9A96E',
 					'purple': '#5D2E8C',
-					'green': '#2E8B57',
-					'yellow': '#DAA520',
-					'beige': '#F5F5DC',
-					'earth': '#704214'
+					'yellow': '#C9A96E',
+					'earth': '#1F5C3E'
 				}
 			},
 			borderRadius: {
@@ -81,20 +91,12 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				},
 				'fade-in': {
 					'0%': { opacity: '0' },
@@ -108,7 +110,7 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
 				'fade-up': 'fade-up 0.7s ease-out'
 			}
 		}

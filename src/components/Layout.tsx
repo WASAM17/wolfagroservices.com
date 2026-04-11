@@ -1,31 +1,20 @@
-
-import React, { Suspense } from 'react';
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import ErrorBoundary from '../ErrorBoundary';
 
 interface LayoutProps {
   children: React.ReactNode;
+  fullWidthHero?: boolean;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, fullWidthHero }: LayoutProps) => {
   return (
-    <div className="flex flex-col min-h-screen w-full">
-      <ErrorBoundary>
-        <Header />
-      </ErrorBoundary>
-      <main className="flex-grow w-full pt-16 md:pt-20">
-        <div className="w-full">
-          <ErrorBoundary>
-            <Suspense fallback={<div className="p-4 text-center">Loading content...</div>}>
-              {children}
-            </Suspense>
-          </ErrorBoundary>
-        </div>
+    <div className="min-h-screen flex flex-col bg-wolf-cream">
+      <Header />
+      <main className={`flex-grow pb-16 lg:pb-0 ${fullWidthHero ? '' : ''}`}>
+        {children}
       </main>
-      <ErrorBoundary>
-        <Footer />
-      </ErrorBoundary>
+      <Footer />
     </div>
   );
 };
