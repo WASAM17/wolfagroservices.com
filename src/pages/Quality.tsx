@@ -147,7 +147,7 @@ const Quality = () => (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div
             className="h-72 md:h-96 rounded-lg bg-cover bg-center"
-            style={{ backgroundImage: `url('/lovable-uploads/sorting.jpeg')` }}
+            style={{ backgroundImage: `url('/lovable-uploads/agriculture-niger.jpeg')` }}
           />
           <div>
             <span className="section-label">Notre engagement</span>

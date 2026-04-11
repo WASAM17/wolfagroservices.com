@@ -54,18 +54,10 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0">
               <img
-                src="/lovable-uploads/80dafe9d-b856-43df-af4f-f65a5bd6e3c5.png"
+                src="/lovable-uploads/logo.png"
                 alt="Wolf Agro Services"
-                className="h-9 md:h-11 w-auto"
+                className="h-10 md:h-13 w-auto"
               />
-              <div className="leading-tight">
-                <div className={`font-bold text-base md:text-lg tracking-tight ${scrolled || mobileOpen ? 'text-wolf-dark-green' : 'text-white'}`}>
-                  WOLF AGRO
-                </div>
-                <div className={`text-xs tracking-widest uppercase ${scrolled || mobileOpen ? 'text-wolf-sand' : 'text-white/70'}`}>
-                  Services
-                </div>
-              </div>
             </Link>
 
             {/* Desktop Nav */}

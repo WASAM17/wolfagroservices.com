@@ -92,7 +92,7 @@ export const products: Product[] = [
       'Logistique internationale maîtrisée',
       'Flexibilité commerciale FOB / CIF',
     ],
-    image: '/lovable-uploads/terrain.jpeg',
+    image: '/lovable-uploads/gomme_arabique.jpeg',
     color: '#C9A96E',
   },
   {
@@ -160,7 +160,7 @@ export const products: Product[] = [
       'Tests laboratoire international disponibles',
       'Logistique FOB / CIF flexible',
     ],
-    image: '/lovable-uploads/sorting.jpeg',
+    image: '/lovable-uploads/sesames.jpeg',
     color: '#2D7A56',
   },
   {
@@ -226,7 +226,7 @@ export const products: Product[] = [
       'Adapté grande distribution et marchés de gros',
     ],
     markets: ['Bénin', 'Burkina Faso', 'Côte d\'Ivoire', 'Ghana', 'Togo'],
-    image: '/lovable-uploads/workers.jpeg',
+    image: '/lovable-uploads/oignon.jpeg',
     color: '#5D2E8C',
   },
   {
@@ -300,7 +300,7 @@ export const products: Product[] = [
       'Grandes surfaces et centrales d\'achat',
       'Importateurs et distributeurs internationaux',
     ],
-    image: '/lovable-uploads/warehouse.jpeg',
+    image: '/lovable-uploads/arachide.jpeg',
     color: '#C9A96E',
   },
 ];

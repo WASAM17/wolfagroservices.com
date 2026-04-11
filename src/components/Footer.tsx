@@ -13,14 +13,10 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
               <img
-                src="/lovable-uploads/80dafe9d-b856-43df-af4f-f65a5bd6e3c5.png"
+                src="/lovable-uploads/logo.png"
                 alt="Wolf Agro Services"
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
-              <div>
-                <div className="font-bold text-lg text-white tracking-tight">WOLF AGRO</div>
-                <div className="text-xs tracking-widest uppercase text-wolf-sand">Services</div>
-              </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">
               Fournisseur structuré à l'origine, spécialisé dans l'export de produits agricoles du Niger.

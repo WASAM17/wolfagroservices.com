@@ -1,48 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import HeroSlider from '@/components/HeroSlider';
 import { products } from '@/data/products';
 import { ArrowRight, CheckCircle, Globe, Package, TrendingUp, Shield, Truck, Leaf } from 'lucide-react';
-
-// ─── Hero ─────────────────────────────────────────────────────────────────────
-const Hero = () => (
-  <section className="relative min-h-screen flex items-center">
-    <div
-      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url('/lovable-uploads/terrain.jpeg')` }}
-    />
-    <div className="absolute inset-0 bg-wolf-dark-green/75" />
-    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 md:pt-40">
-      <div className="max-w-3xl">
-        <span className="inline-block text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-6">
-          Sourcing & Export — Niger
-        </span>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-          Fournisseur structuré à l'origine.{' '}
-          <span className="text-wolf-sand">Export international.</span>
-        </h1>
-        <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl leading-relaxed">
-          Wolf Agro Services approvisionne les marchés internationaux en produits agricoles du Niger —
-          gomme arabique, sésame, oignon de Galmi, arachide décortiquée. Qualité contrôlée, logistique maîtrisée.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            to="/demande-offre"
-            className="inline-flex items-center justify-center bg-wolf-sand text-white font-semibold px-8 py-4 rounded transition-colors hover:bg-wolf-sand/90 text-sm"
-          >
-            Demander une offre commerciale
-          </Link>
-          <Link
-            to="/produits"
-            className="inline-flex items-center justify-center border-2 border-white/40 text-white font-semibold px-8 py-4 rounded transition-colors hover:border-white hover:bg-white/10 text-sm gap-2"
-          >
-            Voir nos produits <ArrowRight size={16} />
-          </Link>
-        </div>
-      </div>
-    </div>
-  </section>
-);
 
 // ─── Stats ────────────────────────────────────────────────────────────────────
 const Stats = () => (
@@ -112,7 +73,7 @@ const AboutPreview = () => (
         <div className="relative">
           <div
             className="h-80 md:h-96 rounded-lg bg-cover bg-center"
-            style={{ backgroundImage: `url('/lovable-uploads/warehouse.jpeg')` }}
+            style={{ backgroundImage: `url('/lovable-uploads/agriculture-niger.jpeg')` }}
           />
           <div className="absolute -bottom-6 -left-6 bg-wolf-sand text-white p-6 rounded-lg shadow-lg hidden md:block">
             <div className="text-3xl font-bold">800 t</div>
@@ -307,7 +268,7 @@ const ImpactSection = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div
           className="h-72 md:h-96 rounded-lg bg-cover bg-center order-2 lg:order-1"
-          style={{ backgroundImage: `url('/lovable-uploads/sorting.jpeg')` }}
+          style={{ backgroundImage: `url('/lovable-uploads/agriculture-niger.jpeg')` }}
         />
         <div className="order-1 lg:order-2">
           <span className="section-label">Impact & Sourcing</span>
@@ -367,7 +328,7 @@ const CTAFinal = () => (
 // ─── Page ─────────────────────────────────────────────────────────────────────
 const Index = () => (
   <Layout>
-    <Hero />
+    <HeroSlider />
     <Stats />
     <AboutPreview />
     <ProductsPreview />

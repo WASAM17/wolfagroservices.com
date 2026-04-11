@@ -5,9 +5,14 @@ import { ArrowRight, CheckCircle, MapPin, Users, Globe } from 'lucide-react';
 
 const About = () => (
   <Layout>
-    {/* Hero */}
-    <section className="relative pt-32 pb-20 bg-wolf-dark-green">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Hero avec image agriculture Niger */}
+    <section className="relative min-h-[50vh] flex items-end pb-16">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url('/lovable-uploads/agriculture-niger.jpeg')` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-wolf-dark-green/90 via-wolf-dark-green/55 to-wolf-dark-green/30" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 w-full">
         <div className="max-w-3xl">
           <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
             À propos
@@ -15,7 +20,7 @@ const About = () => (
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Wolf Agro Services
           </h1>
-          <p className="text-white/70 text-lg leading-relaxed">
+          <p className="text-white/80 text-lg leading-relaxed">
             Fournisseur structuré à l'origine. Spécialisé dans l'export de produits agricoles
             du Niger vers les marchés internationaux depuis Niamey.
           </p>
@@ -52,7 +57,7 @@ const About = () => (
           <div>
             <div
               className="h-80 md:h-96 rounded-lg bg-cover bg-center"
-              style={{ backgroundImage: `url('/lovable-uploads/warehouse.jpeg')` }}
+              style={{ backgroundImage: `url('/lovable-uploads/agriculture-niger.jpeg')` }}
             />
           </div>
         </div>
@@ -103,7 +108,7 @@ const About = () => (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div
             className="h-72 md:h-96 rounded-lg bg-cover bg-center"
-            style={{ backgroundImage: `url('/lovable-uploads/terrain.jpeg')` }}
+            style={{ backgroundImage: `url('/lovable-uploads/agriculture-niger.jpeg')` }}
           />
           <div>
             <span className="section-label">Présence locale</span>

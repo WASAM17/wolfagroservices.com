@@ -5,9 +5,14 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 
 const Export = () => (
   <Layout>
-    {/* Hero */}
-    <section className="relative pt-32 pb-20 bg-wolf-dark-green">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Hero avec image port */}
+    <section className="relative min-h-[50vh] flex items-end pb-16">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url('/lovable-uploads/port-bateau.jpeg')` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-wolf-dark-green/90 via-wolf-dark-green/50 to-wolf-dark-green/30" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 w-full">
         <div className="max-w-3xl">
           <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
             Logistique internationale
@@ -15,7 +20,7 @@ const Export = () => (
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Export & Logistique
           </h1>
-          <p className="text-white/70 text-lg leading-relaxed">
+          <p className="text-white/80 text-lg leading-relaxed">
             De la collecte à l'origine jusqu'à la livraison au port de destination.
             Nous maîtrisons l'ensemble de la chaîne logistique export.
           </p>
@@ -56,10 +61,16 @@ const Export = () => (
               ))}
             </div>
           </div>
-          <div
-            className="h-80 md:h-96 rounded-lg bg-cover bg-center"
-            style={{ backgroundImage: `url('/lovable-uploads/warehouse.jpeg')` }}
-          />
+          <div className="space-y-4">
+            <div
+              className="h-56 md:h-64 rounded-lg bg-cover bg-center"
+              style={{ backgroundImage: `url('/lovable-uploads/port-bateau.jpeg')` }}
+            />
+            <div
+              className="h-36 md:h-44 rounded-lg bg-cover bg-center"
+              style={{ backgroundImage: `url('/lovable-uploads/port-bateau-2.jpeg')` }}
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -176,18 +187,23 @@ const Export = () => (
       </div>
     </section>
 
-    {/* Destinations */}
-    <section className="py-16 bg-wolf-green">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span className="text-white/60 text-xs font-semibold tracking-widest uppercase mb-4 block">
+    {/* Destinations – with port visual */}
+    <section className="relative py-20">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url('/lovable-uploads/port-bateau-2.jpeg')` }}
+      />
+      <div className="absolute inset-0 bg-wolf-dark-green/80" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
           Présence internationale
         </span>
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
           10 pays partenaires, world-wide shipping
         </h2>
-        <p className="text-white/70 max-w-2xl mx-auto mb-10">
+        <p className="text-white/70 max-w-2xl mx-auto">
           Nous exportons vers l'Europe, l'Asie et l'Afrique. Notre logistique s'adapte
-          à toutes les destinations.
+          à toutes les destinations. Port de départ : Cotonou.
         </p>
       </div>
     </section>

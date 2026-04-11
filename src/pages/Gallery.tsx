@@ -4,20 +4,32 @@ import { Link } from 'react-router-dom';
 
 const photos = [
   {
-    src: '/lovable-uploads/terrain.jpeg',
-    caption: 'Terrain & collecte – Sahel nigérien',
+    src: '/lovable-uploads/agriculture-niger.jpeg',
+    caption: 'Agriculture & zones de production – Niger',
   },
   {
-    src: '/lovable-uploads/warehouse.jpeg',
-    caption: 'Stockage & préparation des lots',
+    src: '/lovable-uploads/gomme_arabique.jpeg',
+    caption: 'Gomme arabique (E414) – Acacia Senegal',
   },
   {
-    src: '/lovable-uploads/sorting.jpeg',
-    caption: 'Tri manuel des produits',
+    src: '/lovable-uploads/sesames.jpeg',
+    caption: 'Sésame naturel – Origine Maradi, Niger',
   },
   {
-    src: '/lovable-uploads/workers.jpeg',
-    caption: 'Préparation à l\'export',
+    src: '/lovable-uploads/oignon.jpeg',
+    caption: 'Oignon violet de Galmi – Tahoua, Niger',
+  },
+  {
+    src: '/lovable-uploads/arachide.jpeg',
+    caption: 'Graine d\'arachide décortiquée – Niger',
+  },
+  {
+    src: '/lovable-uploads/port-bateau.jpeg',
+    caption: 'Port de Cotonou – départ des expéditions',
+  },
+  {
+    src: '/lovable-uploads/port-bateau-2.jpeg',
+    caption: 'Logistique maritime internationale',
   },
 ];
 
@@ -43,15 +55,22 @@ const Gallery = () => (
     {/* Grid */}
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-          {photos.map(({ src, caption }) => (
-            <div key={src} className="group relative overflow-hidden rounded-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {photos.map(({ src, caption }, i) => (
+            <div
+              key={src}
+              className={`group relative overflow-hidden rounded-lg ${i === 0 ? 'sm:col-span-2 lg:col-span-2' : ''}`}
+            >
               <div
-                className="h-72 md:h-80 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                className={`bg-cover bg-center transition-transform duration-500 group-hover:scale-105 ${
+                  i === 0 ? 'h-72 md:h-96' : 'h-56 md:h-64'
+                }`}
                 style={{ backgroundImage: `url('${src}')` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
-                <p className="text-white text-sm font-medium p-4">{caption}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent flex items-end">
+                <p className="text-white text-sm font-medium p-4 opacity-70 group-hover:opacity-100 transition-opacity">
+                  {caption}
+                </p>
               </div>
             </div>
           ))}
