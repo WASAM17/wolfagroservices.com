@@ -3,6 +3,7 @@ import Layout from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import { CheckCircle } from 'lucide-react';
 import emailjs from 'emailjs-com';
+import { CONTACT } from '@/lib/contact';
 
 const PRODUCTS = [
   'Gomme arabique (E414)',
@@ -262,16 +263,30 @@ const RFQ = () => {
                   urgentes, contactez-nous directement.
                 </p>
                 <a
-                  href="mailto:contact@wolfagroservices.com"
+                  href={CONTACT.emailHref}
                   className="block text-wolf-green font-semibold text-sm"
                 >
-                  contact@wolfagroservices.com
+                  {CONTACT.email}
                 </a>
                 <a
-                  href="tel:+22720353509"
+                  href={CONTACT.phoneLandlineHref}
                   className="block text-wolf-green font-semibold text-sm mt-1"
                 >
-                  +227 20 35 35 09
+                  {CONTACT.phoneLandline}
+                </a>
+                <a
+                  href={CONTACT.phoneMobileHref}
+                  className="block text-wolf-green font-semibold text-sm mt-1"
+                >
+                  {CONTACT.phoneMobile}
+                </a>
+                <a
+                  href={CONTACT.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-[#25D366] font-semibold text-sm mt-2"
+                >
+                  WhatsApp
                 </a>
               </div>
 
