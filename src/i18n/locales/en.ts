@@ -51,7 +51,7 @@ export const en: TranslationSchema = {
     aboutLabel: 'About',
     aboutTitle: 'A structured supplier, not just a collector',
     aboutP1:
-      'Based in Niamey, Wolf Agro Services operates an organised supply chain directly from Niger's production basins. We work at origin to guarantee volume consistency, quality stability and full traceability.',
+      "Based in Niamey, Wolf Agro Services operates an organised supply chain directly from Niger's production basins. We work at origin to guarantee volume consistency, quality stability and full traceability.",
     aboutP2:
       'Our positioning: a reliable partner for importers, manufacturers, distributors and purchasing groups who need a supplier that keeps its commitments.',
     aboutChecks: [
@@ -189,7 +189,7 @@ export const en: TranslationSchema = {
     approachLabel: 'Our approach',
     approachTitle: 'End-to-end structured logistics',
     approachP1:
-      'Wolf Agro Services manages the logistics chain from collection in Niger's production zones to loading at the port of Cotonou. We work with recognised shipping partners to ensure reliable and well-documented shipments.',
+      "Wolf Agro Services manages the logistics chain from collection in Niger's production zones to loading at the port of Cotonou. We work with recognised shipping partners to ensure reliable and well-documented shipments.",
     approachP2:
       'Our standard commercial terms are FOB Cotonou. We also offer CIF terms to all worldwide destinations, covering freight and insurance.',
     portDeparture: 'Departure port',
