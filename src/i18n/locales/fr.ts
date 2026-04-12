@@ -1,0 +1,322 @@
+export const fr = {
+  nav: {
+    home: 'Accueil',
+    about: 'À propos',
+    products: 'Produits',
+    export: 'Export & Logistique',
+    quality: 'Qualité',
+    contact: 'Contact',
+    rfq: 'Demander une offre',
+    mobileRfq: 'Demander une offre commerciale',
+    gumArabic: 'Gomme arabique',
+    sesame: 'Sésame du Niger',
+    onion: 'Oignon violet de Galmi',
+    peanut: "Graine d'arachide",
+  },
+  common: {
+    learnMore: 'En savoir plus',
+    viewProduct: 'Voir le produit',
+    viewFullCatalog: 'Voir le catalogue complet',
+    requestQuote: 'Demander une cotation (RFQ)',
+    talkToExport: "Parler à l'équipe export",
+    contactUs: 'Nous contacter',
+    requestOffer: 'Demander une offre',
+    goToRfq: 'Aller au formulaire RFQ',
+    ourApproach: 'Notre approche terrain',
+    qualityProcess: 'Notre démarche qualité',
+    exportLogistics: 'Notre logistique export',
+  },
+  footer: {
+    tagline:
+      "Fournisseur structuré à l'origine, spécialisé dans l'export de produits agricoles du Niger. Sourcing direct, qualité contrôlée, logistique internationale.",
+    origin: 'Niger',
+    worldwide: 'Export mondial',
+    navigation: 'Navigation',
+    products: 'Produits',
+    contact: 'Contact',
+    rights: 'Tous droits réservés.',
+    subtitle: 'Sourcing & export de produits agricoles – Niamey, Niger',
+  },
+  whatsapp: {
+    tooltip: 'Discuter sur WhatsApp',
+    ariaLabel: 'Contacter sur WhatsApp',
+  },
+  home: {
+    statsExported: 'Exportées en 2025',
+    statsPartners: 'Pays partenaires',
+    statsProducts: 'Produits phares',
+    statsLogistics: 'Flexibilité logistique',
+    aboutLabel: 'À propos',
+    aboutTitle: "Un fournisseur structuré, pas un simple collecteur",
+    aboutP1:
+      "Basée à Niamey, Wolf Agro Services opère une chaîne d'approvisionnement organisée depuis les bassins de production du Niger. Nous travaillons directement à l'origine pour garantir régularité des volumes, stabilité de la qualité et traçabilité complète.",
+    aboutP2:
+      "Notre positionnement : celui d'un partenaire fiable pour les importateurs, industriels, distributeurs et centrales d'achat qui ont besoin d'un fournisseur capable de tenir ses engagements.",
+    aboutChecks: [
+      "Sourcing direct à l'origine",
+      'Qualité triée et standardisée',
+      'Volumes planifiés et réguliers',
+      'Logistique FOB / CIF',
+      'Traçabilité complète',
+      'Partenaire long terme',
+    ],
+    catalogLabel: 'Catalogue',
+    catalogTitle: "Nos produits d'exportation",
+    catalogDesc:
+      'Quatre produits phares, issus des meilleures zones agricoles du Niger, disponibles en volumes export réguliers.',
+    whyLabel: 'Pourquoi nous choisir',
+    whyTitle: 'Ce qui nous distingue',
+    whyItems: [
+      {
+        title: "Sourcing structuré à l'origine",
+        desc: "Réseau de collecte organisé directement dans les zones de production. Pas d'intermédiaires inutiles.",
+      },
+      {
+        title: 'Qualité contrôlée',
+        desc: 'Tri, nettoyage, homogénéisation. Analyses via laboratoires indépendants sur demande.',
+      },
+      {
+        title: 'Volumes réguliers',
+        desc: "Capacités d'export planifiées. Engagements tenus dans la durée, adaptés aux contrats long terme.",
+      },
+      {
+        title: 'Logistique internationale',
+        desc: 'FOB Cotonou ou CIF toutes destinations. Partenaires maritimes reconnus : CMA CGM, Maersk.',
+      },
+      {
+        title: '10 pays partenaires',
+        desc: "Présence sur les marchés européens, asiatiques et africains. Expérience export confirmée.",
+      },
+      {
+        title: 'Ancrage local fort',
+        desc: "Implantés au Niger, nous valorisons les filières locales et contribuons au développement économique régional.",
+      },
+    ],
+    qualityLabel: 'Qualité',
+    qualityTitle: 'Contrôle qualité rigoureux',
+    qualityP:
+      "Chaque lot passe par un processus de tri, nettoyage et standardisation avant expédition. Des analyses via laboratoires certifiés sont disponibles sur demande.",
+    qualityChecks: [
+      "Tri et nettoyage à l'origine",
+      'Homogénéisation des lots',
+      'Analyses physico-chimiques',
+      'Conformité aux standards export',
+    ],
+    exportLabel: 'Export',
+    exportTitle: 'Logistique internationale maîtrisée',
+    exportP:
+      "Expéditions depuis le port de Cotonou en conditions FOB ou CIF, vers toutes destinations mondiales. Documentation export complète fournie.",
+    exportChecks: [
+      'FOB : Port de Cotonou',
+      'CIF : Toutes destinations',
+      'Partenaires CMA CGM, Maersk',
+      'Documentation export complète',
+    ],
+    impactLabel: 'Impact & Sourcing',
+    impactTitle: 'Ancrés au Niger, ouverts au monde',
+    impactP1:
+      "Notre réseau de collecte s'appuie sur des producteurs locaux organisés dans les meilleures zones agricoles du Niger : Maradi, Tahoua, Zinder. Nous structurons les filières pour en extraire le maximum de valeur.",
+    impactP2:
+      "En travaillant directement à l'origine, nous contribuons au développement économique des communautés rurales tout en offrant à nos acheteurs une traçabilité complète.",
+    ctaLabel: 'Travailler ensemble',
+    ctaTitle: "Vous cherchez un fournisseur fiable à l'origine ?",
+    ctaDesc:
+      "Contactez notre équipe export pour discuter de vos besoins en volumes, qualité et conditions logistiques. Réponse sous 48h.",
+    exportedBadge: 'exportées en 2025',
+  },
+  about: {
+    heroLabel: 'À propos',
+    heroTitle: 'Wolf Agro Services',
+    heroSubtitle:
+      "Fournisseur structuré à l'origine. Spécialisé dans l'export de produits agricoles du Niger vers les marchés internationaux depuis Niamey.",
+    companyLabel: 'Notre entreprise',
+    companyTitle: "Un acteur structuré de l'agro-export nigérien",
+    companyP1:
+      "Wolf Agro Services est une société spécialisée dans le sourcing et l'export de produits agricoles bruts du Niger. Nous opérons directement dans les zones de production — Maradi, Tahoua, Zinder — pour garantir la qualité, la régularité et la traçabilité de chaque lot exporté.",
+    companyP2:
+      "Notre positionnement est celui d'un fournisseur organisé, pas d'un simple collecteur. Nous avons structuré notre chaîne d'approvisionnement pour répondre aux exigences des acheteurs professionnels : importateurs, industriels, distributeurs, grossistes et centrales d'achat à l'international.",
+    companyP3:
+      "En 2025, nous avons exporté 800 tonnes de produits vers 10 pays partenaires. Notre objectif : devenir un partenaire de confiance pour les industries de transformation qui ont besoin d'un approvisionnement fiable, régulier et conforme à leurs standards.",
+    mvrLabel: "Notre raison d'être",
+    mvrTitle: 'Mission, vision & valeurs',
+    mission: 'Mission',
+    missionText:
+      "Connecter les zones de production du Niger aux marchés internationaux. Fournir aux acheteurs professionnels un approvisionnement fiable, traçable et de qualité constante.",
+    vision: 'Vision',
+    visionText:
+      "Devenir le partenaire de référence pour les industriels et importateurs qui cherchent un fournisseur structuré à l'origine en Afrique de l'Ouest.",
+    values: 'Valeurs',
+    valuesText:
+      "Intégrité dans nos engagements. Excellence dans la qualité. Transparence dans notre sourcing. Partenariats équitables avec les producteurs locaux.",
+    localLabel: 'Présence locale',
+    localTitle: "Ancrés au Niger, rayonnant à l'international",
+    localP:
+      "Notre siège est à Niamey, la capitale du Niger. Nous opérons des réseaux de collecte dans les principales zones agricoles du pays : la région de Maradi pour le sésame, Tahoua pour l'oignon violet de Galmi, et les régions Tahoua/Zinder/Maradi pour la gomme arabique.",
+    zones: [
+      { zone: 'Maradi', produits: 'Sésame, Arachide' },
+      { zone: 'Tahoua', produits: 'Oignon violet de Galmi, Gomme arabique' },
+      { zone: 'Zinder', produits: 'Gomme arabique, Arachide' },
+    ],
+    statsExported: 'Exportées en 2025',
+    statsPartners: 'Pays partenaires',
+    statsProducts: 'Produits phares',
+    statsHQ: 'Siège – Niger',
+    ctaTitle: 'Travaillons ensemble',
+    ctaDesc: 'Contactez notre équipe pour discuter de vos besoins ou demander une cotation sur mesure.',
+  },
+  products: {
+    heroLabel: 'Catalogue',
+    heroTitle: "Nos produits d'exportation",
+    heroSubtitle:
+      "Quatre produits phares issus des meilleures zones agricoles du Niger. Sourcing direct, qualité contrôlée, volumes réguliers pour l'export international.",
+    viewProduct: 'Voir le produit',
+    highlights: 'Points clés',
+    specs: 'Fiche technique',
+    rfqCta: 'Demander une offre sur ce produit',
+    origin: 'Origine',
+    packaging: 'Conditionnement',
+    minOrder: 'Commande minimum',
+    certifications: 'Certifications',
+    availability: 'Disponibilité',
+  },
+  export: {
+    heroLabel: 'Logistique internationale',
+    heroTitle: 'Export & Logistique',
+    heroSubtitle:
+      "De la collecte à l'origine jusqu'à la livraison au port de destination. Nous maîtrisons l'ensemble de la chaîne logistique export.",
+    approachLabel: 'Notre approche',
+    approachTitle: 'Une logistique structurée de bout en bout',
+    approachP1:
+      "Wolf Agro Services gère la chaîne logistique depuis la collecte dans les zones de production du Niger jusqu'à la mise à bord au port de Cotonou. Nous travaillons avec des partenaires maritimes reconnus pour garantir des expéditions fiables et bien documentées.",
+    approachP2:
+      "Nos conditions commerciales standards sont FOB Cotonou. Nous proposons également des conditions CIF vers toutes destinations mondiales, avec prise en charge du fret et de l'assurance.",
+    portDeparture: 'Port de départ',
+    incoterms: 'Incoterms',
+    partners: 'Partenaires',
+    destinations: 'Destinations',
+    portValue: 'Cotonou, Bénin',
+    incotermsValue: 'FOB / CIF',
+    partnersValue: 'CMA CGM, Maersk',
+    destinationsValue: 'Monde entier',
+  },
+  quality: {
+    heroLabel: 'Assurance qualité',
+    heroTitle: 'Qualité & Contrôle',
+    heroSubtitle:
+      "Un process qualité rigoureux à chaque étape, de la collecte à l'expédition. Conformité aux standards internationaux, analyses disponibles sur demande.",
+    processLabel: 'Notre démarche',
+    processTitle: 'Process qualité de bout en bout',
+    processDesc: 'Chaque lot est soumis à un contrôle rigoureux avant conditionnement et expédition.',
+    steps: [
+      {
+        step: '01',
+        title: "Sélection à l'origine",
+        desc: "Sélection rigoureuse auprès des producteurs. Rejet des matières ne répondant pas aux critères de qualité minimum.",
+      },
+      {
+        step: '02',
+        title: 'Tri & nettoyage',
+        desc: "Tri manuel et mécanique. Élimination des impuretés, corps étrangers et éléments défectueux.",
+      },
+      {
+        step: '03',
+        title: 'Standardisation',
+        desc: "Homogénéisation des lots pour garantir une qualité uniforme. Conditionnement adapté à l'export.",
+      },
+      {
+        step: '04',
+        title: 'Contrôle final',
+        desc: "Vérification finale avant expédition. Analyses en laboratoire disponibles sur demande de l'acheteur.",
+      },
+    ],
+  },
+  impact: {
+    heroLabel: 'Impact & Sourcing',
+    heroTitle: 'Sourcing responsable au Niger',
+    heroSubtitle:
+      "Notre modèle d'approvisionnement crée de la valeur à l'origine. Nous travaillons avec les producteurs locaux pour structurer les filières et assurer une traçabilité complète.",
+  },
+  gallery: {
+    heroLabel: 'Galerie',
+    heroTitle: 'Nos produits & terroirs',
+    heroSubtitle:
+      "Aperçu de nos zones de production, produits et infrastructures logistiques.",
+  },
+  contact: {
+    heroLabel: 'Contact',
+    heroTitle: 'Contactez notre équipe export',
+    heroSubtitle:
+      "Pour toute question commerciale, demande d'information ou prise de contact initiale. Nous répondons sous 48h ouvrées.",
+    formLabel: 'Message',
+    formTitle: 'Envoyez-nous un message',
+    namePlaceholder: 'Jean Dupont',
+    nameLabel: 'Nom & prénom *',
+    companyLabel: 'Société',
+    companyPlaceholder: 'Votre entreprise',
+    emailLabel: 'Email professionnel *',
+    emailPlaceholder: 'votre@email.com',
+    messageLabel: 'Message *',
+    messagePlaceholder: 'Décrivez votre demande...',
+    submitBtn: 'Envoyer le message',
+    sendingBtn: 'Envoi en cours...',
+    successTitle: 'Message envoyé.',
+    successDesc: 'Nous vous répondons sous 48h ouvrées.',
+    errorMsg: 'Une erreur est survenue. Veuillez réessayer ou nous contacter par email.',
+    rfqNote: 'Pour une demande de cotation formelle, utilisez notre',
+    rfqLink: 'formulaire RFQ dédié',
+    coordLabel: 'Coordonnées',
+    coordTitle: 'Wolf Agro Services',
+    emailSection: 'Email',
+    phoneLandline: 'Téléphone fixe',
+    phoneMobile: 'Téléphone mobile',
+    addressSection: 'Adresse',
+    whatsappTitle: 'Parler sur WhatsApp',
+    whatsappDesc: 'Réponse rapide — message avec offre prérempli',
+    teamTitle: 'Équipe export',
+    teamDesc:
+      "Notre équipe commerciale traite vos demandes du lundi au vendredi. Pour les demandes urgentes, contactez-nous par téléphone ou WhatsApp.",
+    rfqSectionTitle: 'Demande de cotation formelle',
+    rfqSectionDesc:
+      "Pour une demande d'offre structurée (produit, volume, destination, incoterm), utilisez notre formulaire RFQ dédié.",
+  },
+  rfq: {
+    heroLabel: 'RFQ',
+    heroTitle: "Demande d'offre (RFQ)",
+    heroSubtitle:
+      "Remplissez ce formulaire pour recevoir une offre tarifée. Notre équipe export vous répond sous 48h ouvrées.",
+    formLabel: 'Formulaire',
+    formTitle: 'Détails de votre demande',
+    nameLabel: 'Nom & prénom *',
+    companyLabel: 'Société / Organisation *',
+    emailLabel: 'Email professionnel *',
+    countryLabel: 'Pays de destination *',
+    productLabel: 'Produit souhaité *',
+    quantityLabel: 'Quantité estimée (tonnes) *',
+    incotermLabel: 'Incoterm souhaité',
+    messageLabel: 'Informations complémentaires',
+    messagePlaceholder: 'Précisez vos besoins : qualité, packaging, fréquence, certifications requises...',
+    submitBtn: "Envoyer la demande d'offre",
+    sendingBtn: 'Envoi en cours...',
+    successTitle: 'Demande envoyée.',
+    successDesc: 'Notre équipe export vous contacte sous 48h ouvrées.',
+    errorMsg: 'Une erreur est survenue. Veuillez réessayer.',
+    privacyNote: 'En soumettant ce formulaire, vous acceptez que nous vous contactions par email.',
+    sidebarTitle: 'Réponse rapide',
+    sidebarDesc:
+      "Notre équipe export traite vos demandes sous 48h ouvrées. Pour les demandes urgentes, contactez-nous directement.",
+    guarantees: [
+      'Offre tarifée sous 48h',
+      'Fiche technique disponible',
+      'Échantillons sur demande',
+      'Flexibilité FOB / CIF',
+      'Contrats long terme possibles',
+    ],
+    ourProducts: 'Nos produits',
+    selectProduct: 'Sélectionnez un produit',
+    selectIncoterm: "Sélectionnez un incoterm",
+    countryPlaceholder: 'Ex: France, Allemagne, Chine...',
+    quantityPlaceholder: 'Ex: 20',
+  },
+} as const;
+
+export type TranslationSchema = typeof fr;

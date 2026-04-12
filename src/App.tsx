@@ -17,6 +17,8 @@ import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./ErrorBoundary";
 import { Suspense } from "react";
+import { LanguageProvider } from "./i18n";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,7 +36,9 @@ const App = () => (
   <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <LanguageProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               {/* Home */}
@@ -62,6 +66,7 @@ const App = () => (
             </Routes>
           </Suspense>
         </BrowserRouter>
+        </LanguageProvider>
         <Toaster />
         <Sonner />
       </TooltipProvider>

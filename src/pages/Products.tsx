@@ -3,23 +3,22 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { products } from '@/data/products';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from '@/i18n';
 
-const Products = () => (
+const Products = () => {
+  const { t } = useTranslation();
+  const p = t.products;
+  return (
   <Layout>
     {/* Hero */}
     <section className="relative pt-32 pb-20 bg-wolf-dark-green">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
-            Catalogue
+            {p.heroLabel}
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Nos produits d'exportation
-          </h1>
-          <p className="text-white/70 text-lg leading-relaxed">
-            Quatre produits phares issus des meilleures zones agricoles du Niger.
-            Sourcing direct, qualité contrôlée, volumes réguliers pour l'export international.
-          </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{p.heroTitle}</h1>
+          <p className="text-white/70 text-lg leading-relaxed">{p.heroSubtitle}</p>
         </div>
       </div>
     </section>
@@ -61,13 +60,13 @@ const Products = () => (
                     to={`/produits/${product.slug}`}
                     className="flex-1 inline-flex items-center justify-center bg-wolf-green text-white font-semibold px-5 py-3 rounded hover:bg-wolf-dark-green transition-colors text-sm"
                   >
-                    Voir le produit
+                    {p.viewProduct}
                   </Link>
                   <Link
                     to="/demande-offre"
                     className="flex-1 inline-flex items-center justify-center border-2 border-wolf-green text-wolf-green font-semibold px-5 py-3 rounded hover:bg-wolf-green hover:text-white transition-colors text-sm"
                   >
-                    Demander une offre
+                    {t.common.requestOffer}
                   </Link>
                 </div>
               </div>
@@ -90,11 +89,12 @@ const Products = () => (
           to="/contact"
           className="inline-flex items-center gap-2 bg-wolf-green text-white font-semibold px-8 py-4 rounded hover:bg-wolf-dark-green transition-colors"
         >
-          Parler à l'équipe export <ArrowRight size={15} />
+          {t.common.talkToExport} <ArrowRight size={15} />
         </Link>
       </div>
     </section>
   </Layout>
-);
+  );
+};
 
 export default Products;

@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
 import Layout from '@/components/Layout';
-import { Link } from 'react-router-dom';
 import { CheckCircle } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import { CONTACT } from '@/lib/contact';
+import { useTranslation } from '@/i18n';
 
-const PRODUCTS = [
-  'Gomme arabique (E414)',
-  'Sésame naturel du Niger',
-  'Oignon violet de Galmi',
-  "Graine d'arachide décortiquée",
-  'Autre / Plusieurs produits',
-];
-
-const INCOTERMS = ['FOB', 'CIF', 'CFR', 'EXW', 'À définir'];
+const INCOTERMS = ['FOB', 'CIF', 'CFR', 'EXW'];
 
 interface FormState {
   name: string;
@@ -48,6 +40,15 @@ const initial: FormState = {
 const RFQ = () => {
   const [form, setForm] = useState<FormState>(initial);
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const { t } = useTranslation();
+  const r = t.rfq;
+
+  const PRODUCTS = [
+    'Gomme arabique (E414)',
+    'Sésame naturel du Niger',
+    'Oignon violet de Galmi',
+    "Graine d'arachide décortiquée",
+  ];
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -86,15 +87,10 @@ const RFQ = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
-              Demande d'offre
+              {r.heroLabel}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Request for Quotation (RFQ)
-            </h1>
-            <p className="text-white/70 text-lg leading-relaxed">
-              Remplissez ce formulaire pour recevoir une offre commerciale adaptée à vos besoins.
-              Nous vous répondons sous 48h ouvrées.
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{r.heroTitle}</h1>
+            <p className="text-white/70 text-lg leading-relaxed">{r.heroSubtitle}</p>
           </div>
         </div>
       </section>
@@ -107,44 +103,40 @@ const RFQ = () => {
               {status === 'sent' ? (
                 <div className="text-center py-16">
                   <CheckCircle size={56} className="text-wolf-green mx-auto mb-4" />
-                  <h2 className="text-2xl font-bold text-wolf-dark-green mb-3">
-                    Demande envoyée
-                  </h2>
-                  <p className="text-wolf-gray mb-8 max-w-md mx-auto">
-                    Nous avons bien reçu votre demande. Notre équipe vous contactera sous 48h ouvrées.
-                  </p>
+                  <h2 className="text-2xl font-bold text-wolf-dark-green mb-3">{r.successTitle}</h2>
+                  <p className="text-wolf-gray mb-8 max-w-md mx-auto">{r.successDesc}</p>
                   <button
                     onClick={() => setStatus('idle')}
                     className="inline-flex items-center justify-center border-2 border-wolf-green text-wolf-green font-semibold px-6 py-3 rounded hover:bg-wolf-green hover:text-white transition-colors text-sm"
                   >
-                    Nouvelle demande
+                    {r.heroLabel}
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Section 1 : Identité */}
+                  {/* Section 1 */}
                   <div>
                     <h2 className="text-lg font-bold text-wolf-dark-green mb-4 pb-2 border-b border-wolf-beige">
-                      Vos informations
+                      {r.formTitle}
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <Field label="Nom & prénom *" id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder="Jean Dupont" />
-                      <Field label="Société *" id="company" name="company" type="text" required value={form.company} onChange={handleChange} placeholder="Votre entreprise" />
-                      <Field label="Email professionnel *" id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="votre@email.com" />
+                      <Field label={r.nameLabel} id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder="Jean Dupont" />
+                      <Field label={r.companyLabel} id="company" name="company" type="text" required value={form.company} onChange={handleChange} placeholder="Votre entreprise" />
+                      <Field label={r.emailLabel} id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="votre@email.com" />
                       <Field label="Téléphone / WhatsApp" id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="+33 6 00 00 00 00" />
-                      <Field label="Pays *" id="country" name="country" type="text" required value={form.country} onChange={handleChange} placeholder="France, Allemagne..." />
+                      <Field label={r.countryLabel} id="country" name="country" type="text" required value={form.country} onChange={handleChange} placeholder={r.countryPlaceholder} />
                     </div>
                   </div>
 
-                  {/* Section 2 : Produit */}
+                  {/* Section 2 */}
                   <div>
                     <h2 className="text-lg font-bold text-wolf-dark-green mb-4 pb-2 border-b border-wolf-beige">
-                      Votre besoin
+                      {r.productLabel}
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label htmlFor="product" className="block text-sm font-medium text-wolf-dark mb-1.5">
-                          Produit souhaité *
+                          {r.productLabel}
                         </label>
                         <select
                           id="product"
@@ -154,16 +146,16 @@ const RFQ = () => {
                           onChange={handleChange}
                           className="w-full border border-wolf-beige rounded px-4 py-3 text-sm focus:outline-none focus:border-wolf-green transition-colors bg-white"
                         >
-                          <option value="">Sélectionner un produit</option>
+                          <option value="">{r.selectProduct}</option>
                           {PRODUCTS.map((p) => (
                             <option key={p} value={p}>{p}</option>
                           ))}
                         </select>
                       </div>
-                      <Field label="Volume souhaité *" id="volume" name="volume" type="text" required value={form.volume} onChange={handleChange} placeholder="Ex: 1 conteneur 20', 20 tonnes..." />
+                      <Field label={r.quantityLabel} id="volume" name="volume" type="text" required value={form.volume} onChange={handleChange} placeholder={r.quantityPlaceholder} />
                       <div>
                         <label htmlFor="incoterm" className="block text-sm font-medium text-wolf-dark mb-1.5">
-                          Incoterm souhaité
+                          {r.incotermLabel}
                         </label>
                         <select
                           id="incoterm"
@@ -172,20 +164,20 @@ const RFQ = () => {
                           onChange={handleChange}
                           className="w-full border border-wolf-beige rounded px-4 py-3 text-sm focus:outline-none focus:border-wolf-green transition-colors bg-white"
                         >
-                          <option value="">Sélectionner</option>
+                          <option value="">{r.selectIncoterm}</option>
                           {INCOTERMS.map((i) => (
                             <option key={i} value={i}>{i}</option>
                           ))}
                         </select>
                       </div>
-                      <Field label="Port / Destination" id="destination" name="destination" type="text" value={form.destination} onChange={handleChange} placeholder="Ex: Port du Havre, Rotterdam..." />
+                      <Field label="Port / Destination" id="destination" name="destination" type="text" value={form.destination} onChange={handleChange} placeholder="Ex: Le Havre, Rotterdam..." />
                     </div>
                   </div>
 
                   {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-wolf-dark mb-1.5">
-                      Informations complémentaires
+                      {r.messageLabel}
                     </label>
                     <textarea
                       id="message"
@@ -193,50 +185,43 @@ const RFQ = () => {
                       rows={4}
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="Fréquence d'achat, qualité souhaitée, exigences particulières, questions..."
+                      placeholder={r.messagePlaceholder}
                       className="w-full border border-wolf-beige rounded px-4 py-3 text-sm focus:outline-none focus:border-wolf-green transition-colors resize-none"
                     />
                   </div>
 
                   {/* Options */}
-                  <div>
-                    <h2 className="text-lg font-bold text-wolf-dark-green mb-4 pb-2 border-b border-wolf-beige">
-                      Options
-                    </h2>
-                    <div className="space-y-3">
-                      <label className="flex items-center gap-3 cursor-pointer group">
-                        <input
-                          type="checkbox"
-                          name="requestDatasheet"
-                          checked={form.requestDatasheet}
-                          onChange={handleChange}
-                          className="w-4 h-4 accent-wolf-green"
-                        />
-                        <span className="text-sm text-wolf-dark group-hover:text-wolf-green transition-colors">
-                          Je souhaite recevoir la fiche technique produit
-                        </span>
-                      </label>
-                      <label className="flex items-center gap-3 cursor-pointer group">
-                        <input
-                          type="checkbox"
-                          name="requestSample"
-                          checked={form.requestSample}
-                          onChange={handleChange}
-                          className="w-4 h-4 accent-wolf-green"
-                        />
-                        <span className="text-sm text-wolf-dark group-hover:text-wolf-green transition-colors">
-                          Je souhaite recevoir un échantillon
-                        </span>
-                      </label>
-                    </div>
+                  <div className="space-y-3">
+                    <label className="flex items-center gap-3 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        name="requestDatasheet"
+                        checked={form.requestDatasheet}
+                        onChange={handleChange}
+                        className="w-4 h-4 accent-wolf-green"
+                      />
+                      <span className="text-sm text-wolf-dark group-hover:text-wolf-green transition-colors">
+                        Je souhaite recevoir la fiche technique produit
+                      </span>
+                    </label>
+                    <label className="flex items-center gap-3 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        name="requestSample"
+                        checked={form.requestSample}
+                        onChange={handleChange}
+                        className="w-4 h-4 accent-wolf-green"
+                      />
+                      <span className="text-sm text-wolf-dark group-hover:text-wolf-green transition-colors">
+                        Je souhaite recevoir un échantillon
+                      </span>
+                    </label>
                   </div>
 
                   {status === 'error' && (
                     <p className="text-red-600 text-sm">
-                      Une erreur est survenue. Veuillez réessayer ou nous contacter directement à{' '}
-                      <a href="mailto:contact@wolfagroservices.com" className="underline">
-                        contact@wolfagroservices.com
-                      </a>.
+                      {r.errorMsg}{' '}
+                      <a href={CONTACT.emailHref} className="underline">{CONTACT.email}</a>.
                     </p>
                   )}
 
@@ -245,11 +230,9 @@ const RFQ = () => {
                     disabled={status === 'sending'}
                     className="w-full bg-wolf-green text-white font-semibold py-4 rounded hover:bg-wolf-dark-green transition-colors disabled:opacity-70 text-sm"
                   >
-                    {status === 'sending' ? 'Envoi en cours...' : 'Envoyer la demande d\'offre'}
+                    {status === 'sending' ? r.sendingBtn : r.submitBtn}
                   </button>
-                  <p className="text-wolf-gray text-xs text-center">
-                    En soumettant ce formulaire, vous acceptez que nous vous contactions par email.
-                  </p>
+                  <p className="text-wolf-gray text-xs text-center">{r.privacyNote}</p>
                 </form>
               )}
             </div>
@@ -257,27 +240,15 @@ const RFQ = () => {
             {/* Sidebar */}
             <div>
               <div className="bg-wolf-beige p-6 rounded-lg mb-6">
-                <h3 className="font-bold text-wolf-dark-green mb-3">Réponse rapide</h3>
-                <p className="text-wolf-gray text-sm leading-relaxed mb-4">
-                  Notre équipe export traite vos demandes sous 48h ouvrées. Pour les demandes
-                  urgentes, contactez-nous directement.
-                </p>
-                <a
-                  href={CONTACT.emailHref}
-                  className="block text-wolf-green font-semibold text-sm"
-                >
+                <h3 className="font-bold text-wolf-dark-green mb-3">{r.sidebarTitle}</h3>
+                <p className="text-wolf-gray text-sm leading-relaxed mb-4">{r.sidebarDesc}</p>
+                <a href={CONTACT.emailHref} className="block text-wolf-green font-semibold text-sm">
                   {CONTACT.email}
                 </a>
-                <a
-                  href={CONTACT.phoneLandlineHref}
-                  className="block text-wolf-green font-semibold text-sm mt-1"
-                >
+                <a href={CONTACT.phoneLandlineHref} className="block text-wolf-green font-semibold text-sm mt-1">
                   {CONTACT.phoneLandline}
                 </a>
-                <a
-                  href={CONTACT.phoneMobileHref}
-                  className="block text-wolf-green font-semibold text-sm mt-1"
-                >
+                <a href={CONTACT.phoneMobileHref} className="block text-wolf-green font-semibold text-sm mt-1">
                   {CONTACT.phoneMobile}
                 </a>
                 <a
@@ -291,13 +262,7 @@ const RFQ = () => {
               </div>
 
               <div className="space-y-3">
-                {[
-                  'Offre tarifée sous 48h',
-                  'Fiche technique disponible',
-                  'Échantillons sur demande',
-                  'Flexibilité FOB / CIF',
-                  'Contrats long terme possibles',
-                ].map((item) => (
+                {r.guarantees.map((item) => (
                   <div key={item} className="flex items-center gap-2 text-sm text-wolf-dark">
                     <CheckCircle size={14} className="text-wolf-green flex-shrink-0" />
                     {item}
@@ -306,9 +271,9 @@ const RFQ = () => {
               </div>
 
               <div className="mt-6 pt-6 border-t border-wolf-beige">
-                <h3 className="font-bold text-wolf-dark-green mb-3 text-sm">Nos produits</h3>
+                <h3 className="font-bold text-wolf-dark-green mb-3 text-sm">{r.ourProducts}</h3>
                 <div className="space-y-2">
-                  {PRODUCTS.slice(0, 4).map((p) => (
+                  {PRODUCTS.map((p) => (
                     <div key={p} className="text-wolf-gray text-sm py-1 border-b border-wolf-beige/50 last:border-0">
                       {p}
                     </div>

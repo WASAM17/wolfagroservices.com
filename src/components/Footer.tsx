@@ -2,9 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { CONTACT } from '@/lib/contact';
+import { useTranslation } from '@/i18n';
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const { t } = useTranslation();
+
+  const navLinks = [
+    [t.nav.home, '/'],
+    [t.nav.about, '/about'],
+    [t.nav.products, '/produits'],
+    [t.nav.export, '/export'],
+    [t.nav.quality, '/qualite'],
+    ['Impact & Sourcing', '/impact'],
+    ['Galerie', '/galerie'],
+    [t.nav.contact, '/contact'],
+  ] as const;
+
+  const productLinks = [
+    [t.nav.gumArabic + ' (E414)', '/produits/gomme-arabique'],
+    [t.nav.sesame, '/produits/sesame'],
+    [t.nav.onion, '/produits/oignon-galmi'],
+    [t.nav.peanut, '/produits/arachide'],
+  ] as const;
 
   return (
     <footer className="bg-wolf-dark-green text-white">
@@ -20,30 +40,20 @@ const Footer = () => {
               />
             </div>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">
-              Fournisseur structuré à l'origine, spécialisé dans l'export de produits agricoles du Niger.
-              Sourcing direct, qualité contrôlée, logistique internationale.
+              {t.footer.tagline}
             </p>
             <div className="flex items-center gap-4">
-              <span className="text-white/50 text-xs uppercase tracking-widest">Niger</span>
+              <span className="text-white/50 text-xs uppercase tracking-widest">{t.footer.origin}</span>
               <span className="w-6 h-px bg-wolf-sand/50"></span>
-              <span className="text-white/50 text-xs uppercase tracking-widest">Export mondial</span>
+              <span className="text-white/50 text-xs uppercase tracking-widest">{t.footer.worldwide}</span>
             </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Navigation</h4>
+            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">{t.footer.navigation}</h4>
             <ul className="space-y-3">
-              {[
-                ['Accueil', '/'],
-                ['À propos', '/about'],
-                ['Produits', '/produits'],
-                ['Export & Logistique', '/export'],
-                ['Qualité', '/qualite'],
-                ['Impact & Sourcing', '/impact'],
-                ['Galerie', '/galerie'],
-                ['Contact', '/contact'],
-              ].map(([label, href]) => (
+              {navLinks.map(([label, href]) => (
                 <li key={href}>
                   <Link
                     to={href}
@@ -58,14 +68,9 @@ const Footer = () => {
 
           {/* Produits + Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Produits</h4>
+            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">{t.footer.products}</h4>
             <ul className="space-y-3 mb-8">
-              {[
-                ['Gomme arabique (E414)', '/produits/gomme-arabique'],
-                ['Sésame du Niger', '/produits/sesame'],
-                ['Oignon violet de Galmi', '/produits/oignon-galmi'],
-                ["Graine d'arachide", '/produits/arachide'],
-              ].map(([label, href]) => (
+              {productLinks.map(([label, href]) => (
                 <li key={href}>
                   <Link
                     to={href}
@@ -77,7 +82,7 @@ const Footer = () => {
               ))}
             </ul>
 
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">{t.footer.contact}</h4>
             <ul className="space-y-3">
               <li>
                 <a
@@ -130,10 +135,10 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
-            © {year} Wolf Agro Services. Tous droits réservés.
+            © {year} Wolf Agro Services. {t.footer.rights}
           </p>
           <p className="text-white/30 text-xs">
-            Sourcing & export de produits agricoles – Niamey, Niger
+            {t.footer.subtitle}
           </p>
         </div>
       </div>

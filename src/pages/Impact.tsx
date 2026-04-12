@@ -2,8 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from '@/i18n';
 
-const Impact = () => (
+const Impact = () => {
+  const { t } = useTranslation();
+  const i = t.impact;
+  return (
   <Layout>
     {/* Hero avec image agriculture Niger */}
     <section className="relative min-h-[50vh] flex items-end pb-16">
@@ -15,15 +19,10 @@ const Impact = () => (
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 w-full">
         <div className="max-w-3xl">
           <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
-            Impact & Sourcing
+            {i.heroLabel}
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ancrés au Niger, ouverts au monde
-          </h1>
-          <p className="text-white/80 text-lg leading-relaxed">
-            Notre réseau de collecte s'appuie sur des producteurs locaux organisés dans les meilleures
-            zones agricoles du Niger. Nous structurons les filières pour en extraire la valeur maximale.
-          </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{i.heroTitle}</h1>
+          <p className="text-white/80 text-lg leading-relaxed">{i.heroSubtitle}</p>
         </div>
       </div>
     </section>
@@ -159,6 +158,7 @@ const Impact = () => (
       </div>
     </section>
   </Layout>
-);
+  );
+};
 
 export default Impact;

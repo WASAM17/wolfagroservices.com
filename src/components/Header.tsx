@@ -1,30 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
-
-const navLinks = [
-  { label: 'Accueil', href: '/' },
-  { label: 'À propos', href: '/about' },
-  {
-    label: 'Produits',
-    href: '/produits',
-    children: [
-      { label: 'Gomme arabique', href: '/produits/gomme-arabique' },
-      { label: 'Sésame du Niger', href: '/produits/sesame' },
-      { label: 'Oignon violet de Galmi', href: '/produits/oignon-galmi' },
-      { label: "Graine d'arachide", href: '/produits/arachide' },
-    ],
-  },
-  { label: 'Export & Logistique', href: '/export' },
-  { label: 'Qualité', href: '/qualite' },
-  { label: 'Contact', href: '/contact' },
-];
+import { useTranslation, LOCALE_LABELS, type Locale } from '@/i18n';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { t, locale, setLocale } = useTranslation();
+
+  const navLinks = [
+    { label: t.nav.home, href: '/' },
+    { label: t.nav.about, href: '/about' },
+    {
+      label: t.nav.products,
+      href: '/produits',
+      children: [
+        { label: t.nav.gumArabic, href: '/produits/gomme-arabique' },
+        { label: t.nav.sesame, href: '/produits/sesame' },
+        { label: t.nav.onion, href: '/produits/oignon-galmi' },
+        { label: t.nav.peanut, href: '/produits/arachide' },
+      ],
+    },
+    { label: t.nav.export, href: '/export' },
+    { label: t.nav.quality, href: '/qualite' },
+    { label: t.nav.contact, href: '/contact' },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -37,8 +41,21 @@ const Header = () => {
     setProductsOpen(false);
   }, [location.pathname]);
 
+  // Close lang dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
   const isActive = (href: string) =>
     href === '/' ? location.pathname === '/' : location.pathname.startsWith(href);
+
+  const locales = Object.keys(LOCALE_LABELS) as Locale[];
 
   return (
     <>
@@ -119,13 +136,46 @@ const Header = () => {
               )}
             </nav>
 
-            {/* CTA + Mobile Toggle */}
-            <div className="flex items-center gap-3">
+            {/* CTA + Lang + Mobile Toggle */}
+            <div className="flex items-center gap-2">
+              {/* Language Selector */}
+              <div ref={langRef} className="relative">
+                <button
+                  onClick={() => setLangOpen(!langOpen)}
+                  className={`flex items-center gap-1 text-xs font-semibold px-2.5 py-1.5 rounded border transition-colors ${
+                    scrolled || mobileOpen
+                      ? 'border-wolf-beige text-wolf-dark hover:border-wolf-green hover:text-wolf-green'
+                      : 'border-white/30 text-white/80 hover:border-white hover:text-white'
+                  }`}
+                  aria-label="Select language"
+                >
+                  {LOCALE_LABELS[locale]}
+                  <ChevronDown size={11} />
+                </button>
+                {langOpen && (
+                  <div className="absolute right-0 top-full mt-1.5 bg-white border border-gray-100 rounded-lg shadow-lg py-1 w-24 z-50">
+                    {locales.map((l) => (
+                      <button
+                        key={l}
+                        onClick={() => { setLocale(l); setLangOpen(false); }}
+                        className={`w-full text-left px-3 py-2 text-xs font-medium transition-colors ${
+                          l === locale
+                            ? 'text-wolf-green bg-wolf-beige'
+                            : 'text-wolf-dark hover:bg-wolf-beige hover:text-wolf-green'
+                        }`}
+                      >
+                        {LOCALE_LABELS[l]}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <Link
                 to="/demande-offre"
                 className="hidden md:inline-flex items-center bg-wolf-sand text-white text-sm font-semibold px-4 py-2.5 rounded transition-colors hover:bg-wolf-sand/90"
               >
-                Demander une offre
+                {t.nav.rfq}
               </Link>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -173,11 +223,27 @@ const Header = () => {
                   )}
                 </div>
               ))}
+              {/* Mobile language selector */}
+              <div className="flex items-center gap-2 mt-4 mb-2">
+                {locales.map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => setLocale(l)}
+                    className={`text-xs font-semibold px-2.5 py-1.5 rounded border transition-colors ${
+                      l === locale
+                        ? 'bg-wolf-green text-white border-wolf-green'
+                        : 'border-wolf-beige text-wolf-dark hover:border-wolf-green hover:text-wolf-green'
+                    }`}
+                  >
+                    {LOCALE_LABELS[l]}
+                  </button>
+                ))}
+              </div>
               <Link
                 to="/demande-offre"
-                className="mt-4 block text-center bg-wolf-green text-white text-sm font-semibold px-4 py-3 rounded transition-colors hover:bg-wolf-dark-green"
+                className="mt-2 block text-center bg-wolf-green text-white text-sm font-semibold px-4 py-3 rounded transition-colors hover:bg-wolf-dark-green"
               >
-                Demander une offre
+                {t.nav.rfq}
               </Link>
             </div>
           </div>
@@ -190,7 +256,7 @@ const Header = () => {
           to="/demande-offre"
           className="flex items-center justify-center bg-wolf-green text-white text-sm font-semibold py-4 shadow-lg hover:bg-wolf-dark-green transition-colors"
         >
-          Demander une offre commerciale
+          {t.nav.mobileRfq}
         </Link>
       </div>
     </>

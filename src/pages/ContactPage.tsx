@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import { CONTACT } from '@/lib/contact';
+import { useTranslation } from '@/i18n';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({ name: '', company: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const { t } = useTranslation();
+  const c = t.contact;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -37,15 +40,10 @@ const ContactPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
-              Contact
+              {c.heroLabel}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Contactez notre équipe export
-            </h1>
-            <p className="text-white/70 text-lg leading-relaxed">
-              Pour toute question commerciale, demande d'information ou prise de contact initiale.
-              Nous répondons sous 48h ouvrées.
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{c.heroTitle}</h1>
+            <p className="text-white/70 text-lg leading-relaxed">{c.heroSubtitle}</p>
           </div>
         </div>
       </section>
@@ -56,20 +54,20 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Form */}
             <div>
-              <span className="section-label">Message</span>
-              <h2 className="text-2xl font-bold text-wolf-dark-green mb-6">Envoyez-nous un message</h2>
+              <span className="section-label">{c.formLabel}</span>
+              <h2 className="text-2xl font-bold text-wolf-dark-green mb-6">{c.formTitle}</h2>
 
               {status === 'sent' ? (
                 <div className="bg-wolf-green/10 border border-wolf-green/20 rounded-lg p-6 text-wolf-green">
-                  <p className="font-semibold mb-1">Message envoyé.</p>
-                  <p className="text-sm">Nous vous répondons sous 48h ouvrées.</p>
+                  <p className="font-semibold mb-1">{c.successTitle}</p>
+                  <p className="text-sm">{c.successDesc}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-wolf-dark mb-1.5">
-                        Nom & prénom *
+                        {c.nameLabel}
                       </label>
                       <input
                         id="name"
@@ -78,13 +76,13 @@ const ContactPage = () => {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Jean Dupont"
+                        placeholder={c.namePlaceholder}
                         className="w-full border border-wolf-beige rounded px-4 py-3 text-sm focus:outline-none focus:border-wolf-green transition-colors"
                       />
                     </div>
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-wolf-dark mb-1.5">
-                        Société
+                        {c.companyLabel}
                       </label>
                       <input
                         id="company"
@@ -92,14 +90,14 @@ const ContactPage = () => {
                         type="text"
                         value={formData.company}
                         onChange={handleChange}
-                        placeholder="Votre entreprise"
+                        placeholder={c.companyPlaceholder}
                         className="w-full border border-wolf-beige rounded px-4 py-3 text-sm focus:outline-none focus:border-wolf-green transition-colors"
                       />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-wolf-dark mb-1.5">
-                      Email professionnel *
+                      {c.emailLabel}
                     </label>
                     <input
                       id="email"
@@ -108,13 +106,13 @@ const ContactPage = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="votre@email.com"
+                      placeholder={c.emailPlaceholder}
                       className="w-full border border-wolf-beige rounded px-4 py-3 text-sm focus:outline-none focus:border-wolf-green transition-colors"
                     />
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-wolf-dark mb-1.5">
-                      Message *
+                      {c.messageLabel}
                     </label>
                     <textarea
                       id="message"
@@ -123,23 +121,23 @@ const ContactPage = () => {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Décrivez votre demande..."
+                      placeholder={c.messagePlaceholder}
                       className="w-full border border-wolf-beige rounded px-4 py-3 text-sm focus:outline-none focus:border-wolf-green transition-colors resize-none"
                     />
                   </div>
                   {status === 'error' && (
-                    <p className="text-red-600 text-sm">Une erreur est survenue. Veuillez réessayer ou nous contacter par email.</p>
+                    <p className="text-red-600 text-sm">{c.errorMsg}</p>
                   )}
                   <button
                     type="submit"
                     disabled={status === 'sending'}
                     className="w-full bg-wolf-green text-white font-semibold py-3.5 rounded hover:bg-wolf-dark-green transition-colors disabled:opacity-70 text-sm"
                   >
-                    {status === 'sending' ? 'Envoi en cours...' : 'Envoyer le message'}
+                    {status === 'sending' ? c.sendingBtn : c.submitBtn}
                   </button>
                   <p className="text-wolf-gray text-xs">
-                    Pour une demande de cotation formelle, utilisez notre{' '}
-                    <Link to="/demande-offre" className="text-wolf-green underline">formulaire RFQ dédié</Link>.
+                    {c.rfqNote}{' '}
+                    <Link to="/demande-offre" className="text-wolf-green underline">{c.rfqLink}</Link>.
                   </p>
                 </form>
               )}
@@ -147,8 +145,8 @@ const ContactPage = () => {
 
             {/* Coordonnées */}
             <div>
-              <span className="section-label">Coordonnées</span>
-              <h2 className="text-2xl font-bold text-wolf-dark-green mb-6">Wolf Agro Services</h2>
+              <span className="section-label">{c.coordLabel}</span>
+              <h2 className="text-2xl font-bold text-wolf-dark-green mb-6">{c.coordTitle}</h2>
 
               <div className="space-y-5 mb-8">
                 {/* Email */}
@@ -157,7 +155,7 @@ const ContactPage = () => {
                     <Mail size={18} className="text-wolf-green group-hover:text-white" />
                   </div>
                   <div>
-                    <div className="text-xs text-wolf-gray uppercase tracking-wide mb-0.5">Email</div>
+                    <div className="text-xs text-wolf-gray uppercase tracking-wide mb-0.5">{c.emailSection}</div>
                     <div className="text-wolf-dark-green font-semibold">{CONTACT.email}</div>
                   </div>
                 </a>
@@ -168,7 +166,7 @@ const ContactPage = () => {
                     <Phone size={18} className="text-wolf-green group-hover:text-white" />
                   </div>
                   <div>
-                    <div className="text-xs text-wolf-gray uppercase tracking-wide mb-0.5">Téléphone fixe</div>
+                    <div className="text-xs text-wolf-gray uppercase tracking-wide mb-0.5">{c.phoneLandline}</div>
                     <div className="text-wolf-dark-green font-semibold">{CONTACT.phoneLandline}</div>
                   </div>
                 </a>
@@ -179,7 +177,7 @@ const ContactPage = () => {
                     <Phone size={18} className="text-wolf-green group-hover:text-white" />
                   </div>
                   <div>
-                    <div className="text-xs text-wolf-gray uppercase tracking-wide mb-0.5">Téléphone mobile</div>
+                    <div className="text-xs text-wolf-gray uppercase tracking-wide mb-0.5">{c.phoneMobile}</div>
                     <div className="text-wolf-dark-green font-semibold">{CONTACT.phoneMobile}</div>
                   </div>
                 </a>
@@ -190,13 +188,13 @@ const ContactPage = () => {
                     <MapPin size={18} className="text-wolf-green" />
                   </div>
                   <div>
-                    <div className="text-xs text-wolf-gray uppercase tracking-wide mb-0.5">Adresse</div>
+                    <div className="text-xs text-wolf-gray uppercase tracking-wide mb-0.5">{c.addressSection}</div>
                     <div className="text-wolf-dark-green font-semibold">{CONTACT.address}</div>
                   </div>
                 </div>
               </div>
 
-              {/* WhatsApp block — mis en avant */}
+              {/* WhatsApp block */}
               <a
                 href={CONTACT.whatsappHref}
                 target="_blank"
@@ -209,37 +207,27 @@ const ContactPage = () => {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <div className="font-semibold text-wolf-dark-green text-sm mb-0.5">
-                    Parler sur WhatsApp
-                  </div>
-                  <div className="text-wolf-gray text-xs">
-                    Réponse rapide — message avec offre prérempli
-                  </div>
+                  <div className="font-semibold text-wolf-dark-green text-sm mb-0.5">{c.whatsappTitle}</div>
+                  <div className="text-wolf-gray text-xs">{c.whatsappDesc}</div>
                 </div>
                 <ArrowRight size={16} className="text-wolf-gray group-hover:text-wolf-green transition-colors" />
               </a>
 
               {/* Équipe export */}
               <div className="bg-wolf-beige p-5 rounded-lg border border-wolf-beige/80 mb-6">
-                <h3 className="font-bold text-wolf-dark-green mb-2 text-sm">Équipe export</h3>
-                <p className="text-wolf-gray text-sm leading-relaxed">
-                  Notre équipe commerciale traite vos demandes du lundi au vendredi.
-                  Pour les demandes urgentes, contactez-nous par téléphone ou WhatsApp.
-                </p>
+                <h3 className="font-bold text-wolf-dark-green mb-2 text-sm">{c.teamTitle}</h3>
+                <p className="text-wolf-gray text-sm leading-relaxed">{c.teamDesc}</p>
               </div>
 
               {/* RFQ CTA */}
               <div className="p-5 border border-wolf-green/20 rounded-lg bg-wolf-green/5">
-                <h3 className="font-bold text-wolf-dark-green mb-2 text-sm">Demande de cotation formelle</h3>
-                <p className="text-wolf-gray text-sm mb-4">
-                  Pour une demande d'offre structurée (produit, volume, destination, incoterm),
-                  utilisez notre formulaire RFQ dédié.
-                </p>
+                <h3 className="font-bold text-wolf-dark-green mb-2 text-sm">{c.rfqSectionTitle}</h3>
+                <p className="text-wolf-gray text-sm mb-4">{c.rfqSectionDesc}</p>
                 <Link
                   to="/demande-offre"
                   className="inline-flex items-center gap-2 text-wolf-green font-semibold text-sm hover:text-wolf-dark-green transition-colors"
                 >
-                  Aller au formulaire RFQ <ArrowRight size={14} />
+                  {t.common.goToRfq} <ArrowRight size={14} />
                 </Link>
               </div>
             </div>

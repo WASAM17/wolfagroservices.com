@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/i18n';
 
 const photos = [
   {
@@ -33,21 +34,20 @@ const photos = [
   },
 ];
 
-const Gallery = () => (
+const Gallery = () => {
+  const { t } = useTranslation();
+  const g = t.gallery;
+  return (
   <Layout>
     {/* Hero */}
     <section className="relative pt-32 pb-20 bg-wolf-dark-green">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
-            Galerie
+            {g.heroLabel}
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Niger, à l'origine de nos produits
-          </h1>
-          <p className="text-white/70 text-lg leading-relaxed">
-            Photos de terrain, d'entrepôt et de production. La réalité de notre travail au Niger.
-          </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{g.heroTitle}</h1>
+          <p className="text-white/70 text-lg leading-relaxed">{g.heroSubtitle}</p>
         </div>
       </div>
     </section>
@@ -91,11 +91,12 @@ const Gallery = () => (
           to="/contact"
           className="inline-flex items-center justify-center bg-wolf-green text-white font-semibold px-8 py-4 rounded hover:bg-wolf-dark-green transition-colors"
         >
-          Nous contacter
+          {t.common.contactUs}
         </Link>
       </div>
     </section>
   </Layout>
-);
+  );
+};
 
 export default Gallery;
