@@ -109,7 +109,7 @@ const RFQ = () => {
                     onClick={() => setStatus('idle')}
                     className="inline-flex items-center justify-center border-2 border-wolf-green text-wolf-green font-semibold px-6 py-3 rounded hover:bg-wolf-green hover:text-white transition-colors text-sm"
                   >
-                    {r.heroLabel}
+                    {r.newRequest}
                   </button>
                 </div>
               ) : (
@@ -117,13 +117,13 @@ const RFQ = () => {
                   {/* Section 1 */}
                   <div>
                     <h2 className="text-lg font-bold text-wolf-dark-green mb-4 pb-2 border-b border-wolf-beige">
-                      {r.formTitle}
+                      {r.yourInfo}
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <Field label={r.nameLabel} id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder="Jean Dupont" />
                       <Field label={r.companyLabel} id="company" name="company" type="text" required value={form.company} onChange={handleChange} placeholder="Votre entreprise" />
                       <Field label={r.emailLabel} id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="votre@email.com" />
-                      <Field label="Téléphone / WhatsApp" id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="+33 6 00 00 00 00" />
+                      <Field label={r.phoneLabel} id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder={r.phonePlaceholder} />
                       <Field label={r.countryLabel} id="country" name="country" type="text" required value={form.country} onChange={handleChange} placeholder={r.countryPlaceholder} />
                     </div>
                   </div>
@@ -131,7 +131,7 @@ const RFQ = () => {
                   {/* Section 2 */}
                   <div>
                     <h2 className="text-lg font-bold text-wolf-dark-green mb-4 pb-2 border-b border-wolf-beige">
-                      {r.productLabel}
+                      {r.yourNeed}
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
@@ -170,7 +170,7 @@ const RFQ = () => {
                           ))}
                         </select>
                       </div>
-                      <Field label="Port / Destination" id="destination" name="destination" type="text" value={form.destination} onChange={handleChange} placeholder="Ex: Le Havre, Rotterdam..." />
+                      <Field label={r.portLabel} id="destination" name="destination" type="text" value={form.destination} onChange={handleChange} placeholder={r.portPlaceholder} />
                     </div>
                   </div>
 
@@ -191,31 +191,36 @@ const RFQ = () => {
                   </div>
 
                   {/* Options */}
-                  <div className="space-y-3">
-                    <label className="flex items-center gap-3 cursor-pointer group">
-                      <input
-                        type="checkbox"
-                        name="requestDatasheet"
-                        checked={form.requestDatasheet}
-                        onChange={handleChange}
-                        className="w-4 h-4 accent-wolf-green"
-                      />
-                      <span className="text-sm text-wolf-dark group-hover:text-wolf-green transition-colors">
-                        Je souhaite recevoir la fiche technique produit
-                      </span>
-                    </label>
-                    <label className="flex items-center gap-3 cursor-pointer group">
-                      <input
-                        type="checkbox"
-                        name="requestSample"
-                        checked={form.requestSample}
-                        onChange={handleChange}
-                        className="w-4 h-4 accent-wolf-green"
-                      />
-                      <span className="text-sm text-wolf-dark group-hover:text-wolf-green transition-colors">
-                        Je souhaite recevoir un échantillon
-                      </span>
-                    </label>
+                  <div>
+                    <h2 className="text-lg font-bold text-wolf-dark-green mb-4 pb-2 border-b border-wolf-beige">
+                      {r.options}
+                    </h2>
+                    <div className="space-y-3">
+                      <label className="flex items-center gap-3 cursor-pointer group">
+                        <input
+                          type="checkbox"
+                          name="requestDatasheet"
+                          checked={form.requestDatasheet}
+                          onChange={handleChange}
+                          className="w-4 h-4 accent-wolf-green"
+                        />
+                        <span className="text-sm text-wolf-dark group-hover:text-wolf-green transition-colors">
+                          {r.checkDatasheet}
+                        </span>
+                      </label>
+                      <label className="flex items-center gap-3 cursor-pointer group">
+                        <input
+                          type="checkbox"
+                          name="requestSample"
+                          checked={form.requestSample}
+                          onChange={handleChange}
+                          className="w-4 h-4 accent-wolf-green"
+                        />
+                        <span className="text-sm text-wolf-dark group-hover:text-wolf-green transition-colors">
+                          {r.checkSample}
+                        </span>
+                      </label>
+                    </div>
                   </div>
 
                   {status === 'error' && (

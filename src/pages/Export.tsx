@@ -70,25 +70,17 @@ const Export = () => {
       <section className="py-20 bg-wolf-beige">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="section-label">Conditions commerciales</span>
-            <h2 className="section-title mb-4">FOB & CIF – flexibilité totale</h2>
+            <span className="section-label">{e.incotermsLabel}</span>
+            <h2 className="section-title mb-4">{e.incotermsTitle}</h2>
             <div className="section-divider mx-auto" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg border border-wolf-beige">
-              <div className="text-wolf-sand font-bold text-2xl mb-2">FOB</div>
-              <div className="text-wolf-dark-green font-semibold text-lg mb-4">Free On Board – Cotonou</div>
-              <p className="text-wolf-gray text-sm leading-relaxed mb-5">
-                Nous prenons en charge tous les frais jusqu'à la mise à bord au port de Cotonou.
-                L'acheteur gère le fret maritime et l'assurance depuis le port.
-              </p>
+              <div className="text-wolf-sand font-bold text-2xl mb-2">{e.fobTitle}</div>
+              <div className="text-wolf-dark-green font-semibold text-lg mb-4">{e.fobSubtitle}</div>
+              <p className="text-wolf-gray text-sm leading-relaxed mb-5">{e.fobDesc}</p>
               <ul className="space-y-2">
-                {[
-                  'Collecte et transport vers Cotonou inclus',
-                  'Dédouanement export Niger inclus',
-                  'Mise à bord comprise',
-                  'Documentation complète fournie',
-                ].map((item) => (
+                {e.fobItems.map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-wolf-dark">
                     <CheckCircle size={14} className="text-wolf-green flex-shrink-0" />
                     {item}
@@ -97,14 +89,11 @@ const Export = () => {
               </ul>
             </div>
             <div className="bg-wolf-dark-green p-8 rounded-lg">
-              <div className="text-wolf-sand font-bold text-2xl mb-2">CIF</div>
-              <div className="text-white font-semibold text-lg mb-4">Cost Insurance Freight</div>
-              <p className="text-white/70 text-sm leading-relaxed mb-5">
-                Nous prenons en charge le fret maritime et l'assurance jusqu'au port de destination.
-                Solution clé en main pour l'acheteur.
-              </p>
+              <div className="text-wolf-sand font-bold text-2xl mb-2">{e.cifTitle}</div>
+              <div className="text-white font-semibold text-lg mb-4">{e.cifSubtitle}</div>
+              <p className="text-white/70 text-sm leading-relaxed mb-5">{e.cifDesc}</p>
               <ul className="space-y-2">
-                {['FOB inclus', 'Fret maritime pris en charge', 'Assurance maritime incluse', 'Livraison port de destination'].map((item) => (
+                {e.cifItems.map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-white/80">
                     <CheckCircle size={14} className="text-wolf-sand flex-shrink-0" />
                     {item}
@@ -121,24 +110,14 @@ const Export = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <span className="section-label">Conformité export</span>
+              <span className="section-label">{e.docLabel}</span>
               <h2 className="text-2xl md:text-3xl font-bold text-wolf-dark-green mb-4">
-                Documentation export complète
+                {e.docTitle}
               </h2>
               <div className="section-divider" />
-              <p className="text-wolf-gray leading-relaxed mb-6 mt-4">
-                Chaque expédition est accompagnée d'un dossier documentaire complet, conforme
-                aux exigences douanières et réglementaires des pays de destination.
-              </p>
+              <p className="text-wolf-gray leading-relaxed mb-6 mt-4">{e.docDesc}</p>
               <ul className="space-y-3">
-                {[
-                  'Facture commerciale (Commercial Invoice)',
-                  'Liste de colisage (Packing List)',
-                  'Connaissement (Bill of Lading)',
-                  "Certificat d'origine",
-                  'Certificat phytosanitaire si requis',
-                  "Certificat d'analyse laboratoire sur demande",
-                ].map((doc) => (
+                {e.docItems.map((doc) => (
                   <li key={doc} className="flex items-center gap-2 text-wolf-dark text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-wolf-sand flex-shrink-0" />
                     {doc}
@@ -147,18 +126,13 @@ const Export = () => {
               </ul>
             </div>
             <div>
-              <span className="section-label">Volumes & capacités</span>
+              <span className="section-label">{e.capacityLabel}</span>
               <h2 className="text-2xl md:text-3xl font-bold text-wolf-dark-green mb-4">
-                Capacités d'export par produit
+                {e.capacityTitle}
               </h2>
               <div className="section-divider" />
               <div className="mt-4 space-y-4">
-                {[
-                  { produit: 'Gomme arabique', volume: "1 à 3 conteneurs/mois", note: '≈ 18,7 t/conteneur' },
-                  { produit: 'Sésame', volume: "15 conteneurs 20'", note: '≈ 280 t par campagne' },
-                  { produit: 'Oignon de Galmi', volume: '75 tonnes/mois', note: 'Campagne : fév – mai' },
-                  { produit: 'Arachide décortiquée', volume: "1 à 3 conteneurs/mois", note: '≈ 18,7 t/conteneur' },
-                ].map(({ produit, volume, note }) => (
+                {e.capacityItems.map(({ produit, volume, note }) => (
                   <div key={produit} className="flex items-start justify-between p-4 bg-wolf-beige rounded-lg">
                     <div>
                       <div className="font-semibold text-wolf-dark-green text-sm">{produit}</div>
@@ -182,28 +156,18 @@ const Export = () => {
         <div className="absolute inset-0 bg-wolf-dark-green/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
-            Présence internationale
+            {e.presenceLabel}
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            10 pays partenaires, world-wide shipping
-          </h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
-            Nous exportons vers l'Europe, l'Asie et l'Afrique. Notre logistique s'adapte
-            à toutes les destinations. Port de départ : Cotonou.
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{e.presenceTitle}</h2>
+          <p className="text-white/70 max-w-2xl mx-auto">{e.presenceDesc}</p>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 bg-wolf-beige">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-wolf-dark-green mb-4">
-            Besoin d'une cotation logistique ?
-          </h2>
-          <p className="text-wolf-gray mb-8">
-            Indiquez-nous vos besoins (produit, volume, incoterm, destination) et nous vous
-            répondons sous 48h.
-          </p>
+          <h2 className="text-3xl font-bold text-wolf-dark-green mb-4">{e.ctaTitle}</h2>
+          <p className="text-wolf-gray mb-8">{e.ctaDesc}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/demande-offre"

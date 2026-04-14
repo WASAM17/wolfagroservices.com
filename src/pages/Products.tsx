@@ -79,12 +79,8 @@ const Products = () => {
     {/* CTA */}
     <section className="py-16 bg-wolf-beige">
       <div className="max-w-3xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-wolf-dark-green mb-4">
-          Vous ne trouvez pas ce que vous cherchez ?
-        </h2>
-        <p className="text-wolf-gray mb-8">
-          Contactez-nous pour discuter de vos besoins spécifiques en produits agricoles du Niger.
-        </p>
+        <h2 className="text-2xl md:text-3xl font-bold text-wolf-dark-green mb-4">{p.ctaTitle}</h2>
+        <p className="text-wolf-gray mb-8">{p.ctaDesc}</p>
         <Link
           to="/contact"
           className="inline-flex items-center gap-2 bg-wolf-green text-white font-semibold px-8 py-4 rounded hover:bg-wolf-dark-green transition-colors"

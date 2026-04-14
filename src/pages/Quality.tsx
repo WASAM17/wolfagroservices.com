@@ -50,27 +50,14 @@ const Quality = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <span className="section-label">Analyses disponibles</span>
+              <span className="section-label">{q.analysesLabel}</span>
               <h2 className="text-2xl md:text-3xl font-bold text-wolf-dark-green mb-4">
-                Analyses laboratoire sur demande
+                {q.analysesTitle}
               </h2>
               <div className="section-divider" />
-              <p className="text-wolf-gray leading-relaxed mb-6 mt-4">
-                Des analyses complètes peuvent être réalisées via des organismes certifiés
-                (Bureau Veritas et autres) à la demande de l'acheteur. Les résultats accompagnent
-                chaque expédition.
-              </p>
+              <p className="text-wolf-gray leading-relaxed mb-6 mt-4">{q.analysesDesc}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  'Analyse physico-chimique',
-                  'Analyse microbiologique',
-                  'Métaux lourds',
-                  'Aflatoxines',
-                  "Taux d'humidité",
-                  'Impuretés et matières étrangères',
-                  "Teneur en huile",
-                  'Pureté et conformité additif (E414)',
-                ].map((a) => (
+                {q.analysesList.map((a) => (
                   <div key={a} className="flex items-center gap-2 bg-white p-3 rounded-lg border border-wolf-beige text-sm text-wolf-dark">
                     <CheckCircle size={14} className="text-wolf-green flex-shrink-0" />
                     {a}
@@ -79,22 +66,14 @@ const Quality = () => {
               </div>
             </div>
             <div>
-              <span className="section-label">Conformité</span>
+              <span className="section-label">{q.conformityLabel}</span>
               <h2 className="text-2xl md:text-3xl font-bold text-wolf-dark-green mb-4">
-                Conformité aux standards export
+                {q.conformityTitle}
               </h2>
               <div className="section-divider" />
-              <p className="text-wolf-gray leading-relaxed mb-6 mt-4">
-                Nos produits sont préparés pour répondre aux exigences des marchés européens,
-                asiatiques et américains, notamment pour les usages alimentaires et industriels.
-              </p>
+              <p className="text-wolf-gray leading-relaxed mb-6 mt-4">{q.conformityDesc}</p>
               <ul className="space-y-4">
-                {[
-                  { title: 'Gomme arabique', detail: 'Conformité additif E414. Norme JECFA. Usages alimentaires et pharmaceutiques.' },
-                  { title: 'Sésame', detail: 'Respect des limites MRL (aflatoxines, pesticides). Conformité export alimentaire.' },
-                  { title: 'Oignon de Galmi', detail: 'Produit frais conforme aux normes de la grande distribution.' },
-                  { title: 'Arachide décortiquée', detail: 'Contrôle aflatoxines. Conformité CODEX et réglementations UE.' },
-                ].map(({ title, detail }) => (
+                {q.conformityItems.map(({ title, detail }) => (
                   <div key={title} className="p-4 bg-white rounded-lg border border-wolf-beige">
                     <div className="font-semibold text-wolf-dark-green text-sm mb-1">{title}</div>
                     <div className="text-wolf-gray text-sm">{detail}</div>
@@ -115,25 +94,13 @@ const Quality = () => {
               style={{ backgroundImage: `url('/lovable-uploads/agriculture-niger.jpeg')` }}
             />
             <div>
-              <span className="section-label">Notre engagement</span>
-              <h2 className="section-title mb-4">La qualité, notre engagement principal</h2>
+              <span className="section-label">{q.engagementLabel}</span>
+              <h2 className="section-title mb-4">{q.engagementTitle}</h2>
               <div className="section-divider" />
-              <p className="text-wolf-gray leading-relaxed mb-6">
-                Nous considérons la qualité comme un engagement fondamental, pas une option.
-                Chaque lot qui quitte nos entrepôts a été sélectionné, trié et contrôlé selon
-                des critères stricts et documentés.
-              </p>
-              <p className="text-wolf-gray leading-relaxed mb-8">
-                Notre objectif est de vous fournir exactement ce qui a été convenu — ni plus,
-                ni moins. Consistance, documentation et transparence à chaque expédition.
-              </p>
+              <p className="text-wolf-gray leading-relaxed mb-6">{q.engagementP1}</p>
+              <p className="text-wolf-gray leading-relaxed mb-8">{q.engagementP2}</p>
               <div className="grid grid-cols-2 gap-4">
-                {[
-                  { value: '100%', label: 'Lots documentés' },
-                  { value: 'Sur demande', label: 'Analyses labo' },
-                  { value: 'Certifiés', label: 'Partenaires analyse' },
-                  { value: 'Traçable', label: 'Origine garantie' },
-                ].map(({ value, label }) => (
+                {q.engagementStats.map(({ value, label }) => (
                   <div key={label} className="text-center p-4 bg-wolf-beige rounded-lg">
                     <div className="font-bold text-wolf-dark-green mb-1">{value}</div>
                     <div className="text-wolf-gray text-xs">{label}</div>
@@ -149,14 +116,10 @@ const Quality = () => {
       <section className="py-16 bg-wolf-dark-green">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <span className="text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-4 block">
-            Questions qualité
+            {q.ctaLabel}
           </span>
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Vous avez des exigences qualité spécifiques ?
-          </h2>
-          <p className="text-white/70 mb-8">
-            Parlez-nous de vos cahiers des charges. Nous nous adaptons aux standards de votre marché.
-          </p>
+          <h2 className="text-3xl font-bold text-white mb-4">{q.ctaTitle}</h2>
+          <p className="text-white/70 mb-8">{q.ctaDesc}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/demande-offre"
