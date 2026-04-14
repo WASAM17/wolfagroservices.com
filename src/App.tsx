@@ -14,6 +14,10 @@ import Gallery from "./pages/Gallery";
 import ContactPage from "./pages/ContactPage";
 import RFQ from "./pages/RFQ";
 import ESG from "./pages/ESG";
+import CGU from "./pages/CGU";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
+import CookieBanner from "./components/CookieBanner";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./ErrorBoundary";
@@ -40,6 +44,7 @@ const App = () => (
         <LanguageProvider>
         <BrowserRouter>
           <ScrollToTop />
+          <CookieBanner />
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               {/* Home */}
@@ -56,6 +61,11 @@ const App = () => (
               <Route path="/contact" element={<ErrorBoundary><ContactPage /></ErrorBoundary>} />
               <Route path="/demande-offre" element={<ErrorBoundary><RFQ /></ErrorBoundary>} />
               <Route path="/esg" element={<ErrorBoundary><ESG /></ErrorBoundary>} />
+
+              {/* Legal */}
+              <Route path="/cgu" element={<ErrorBoundary><CGU /></ErrorBoundary>} />
+              <Route path="/politique-confidentialite" element={<ErrorBoundary><PrivacyPolicy /></ErrorBoundary>} />
+              <Route path="/politique-cookies" element={<ErrorBoundary><CookiePolicy /></ErrorBoundary>} />
 
               {/* Legacy product route – handled inside ProductDetail via useParams */}
               <Route path="/product/:id" element={<ErrorBoundary><ProductDetail /></ErrorBoundary>} />

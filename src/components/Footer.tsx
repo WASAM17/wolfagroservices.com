@@ -138,6 +138,19 @@ const Footer = () => {
           <p className="text-white/40 text-sm">
             © {year} Wolf Agro Services. {t.footer.rights}
           </p>
+          <div className="flex items-center gap-4 flex-wrap justify-center">
+            <Link to="/cgu" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+              {t.legal.footerCgu}
+            </Link>
+            <span className="text-white/20 text-xs">·</span>
+            <Link to="/politique-confidentialite" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+              {t.legal.footerPrivacy}
+            </Link>
+            <span className="text-white/20 text-xs">·</span>
+            <Link to="/politique-cookies" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+              {t.legal.footerCookies}
+            </Link>
+          </div>
           <p className="text-white/30 text-xs">
             {t.footer.subtitle}
           </p>
