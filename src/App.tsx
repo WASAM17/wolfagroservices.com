@@ -13,6 +13,7 @@ import Impact from "./pages/Impact";
 import Gallery from "./pages/Gallery";
 import ContactPage from "./pages/ContactPage";
 import RFQ from "./pages/RFQ";
+import ESG from "./pages/ESG";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./ErrorBoundary";
@@ -54,6 +55,7 @@ const App = () => (
               <Route path="/galerie" element={<ErrorBoundary><Gallery /></ErrorBoundary>} />
               <Route path="/contact" element={<ErrorBoundary><ContactPage /></ErrorBoundary>} />
               <Route path="/demande-offre" element={<ErrorBoundary><RFQ /></ErrorBoundary>} />
+              <Route path="/esg" element={<ErrorBoundary><ESG /></ErrorBoundary>} />
 
               {/* Legacy product route – handled inside ProductDetail via useParams */}
               <Route path="/product/:id" element={<ErrorBoundary><ProductDetail /></ErrorBoundary>} />

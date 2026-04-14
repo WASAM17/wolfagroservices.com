@@ -16,6 +16,7 @@ const Footer = () => {
     [t.nav.quality, '/qualite'],
     ['Impact & Sourcing', '/impact'],
     ['Galerie', '/galerie'],
+    [t.nav.esg, '/esg'],
     [t.nav.contact, '/contact'],
   ] as const;
 

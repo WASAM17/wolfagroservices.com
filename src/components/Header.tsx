@@ -27,6 +27,7 @@ const Header = () => {
     },
     { label: t.nav.export, href: '/export' },
     { label: t.nav.quality, href: '/qualite' },
+    { label: t.nav.esg, href: '/esg' },
     { label: t.nav.contact, href: '/contact' },
   ];
 
