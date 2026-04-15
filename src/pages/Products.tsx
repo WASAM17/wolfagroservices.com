@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
-import { products } from '@/data/products';
+import { getLocalizedProducts } from '@/data/products-i18n';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/i18n';
 
 const Products = () => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const p = t.products;
+  const products = getLocalizedProducts(locale);
   return (
   <Layout>
     {/* Hero */}

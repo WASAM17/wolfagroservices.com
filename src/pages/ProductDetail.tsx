@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import Layout from '@/components/Layout';
-import { products, getProductBySlug, getProductById } from '@/data/products';
+import { products } from '@/data/products';
+import { getLocalizedProductBySlug, getLocalizedProductById, getLocalizedProducts } from '@/data/products-i18n';
 import { ArrowRight, CheckCircle, ArrowLeft } from 'lucide-react';
 import { useTranslation } from '@/i18n';
 
 const ProductDetail = () => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const pd = t.productDetail;
   const { id, slug } = useParams<{ id?: string; slug?: string }>();
 
   // Support both /produits/:slug and legacy /product/:id
-  const product = slug ? getProductBySlug(slug) : getProductById(id || '');
+  const product = slug
+    ? getLocalizedProductBySlug(slug, locale)
+    : getLocalizedProductById(id || '', locale);
 
   if (!product) {
     // Try legacy id match
@@ -22,7 +25,7 @@ const ProductDetail = () => {
     return <Navigate to="/produits" replace />;
   }
 
-  const otherProducts = products.filter((p) => p.id !== product.id);
+  const otherProducts = getLocalizedProducts(locale).filter((p) => p.id !== product.id);
 
   return (
     <Layout>

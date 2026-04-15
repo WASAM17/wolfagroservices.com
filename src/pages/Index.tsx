@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import HeroSlider from '@/components/HeroSlider';
-import { products } from '@/data/products';
+import { getLocalizedProducts } from '@/data/products-i18n';
 import { ArrowRight, CheckCircle, Globe, Package, TrendingUp, Shield, Truck, Leaf } from 'lucide-react';
 import { useTranslation } from '@/i18n';
 
@@ -76,7 +76,8 @@ const AboutPreview = () => {
 
 // ─── Products Preview ─────────────────────────────────────────────────────────
 const ProductsPreview = () => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
+  const products = getLocalizedProducts(locale);
   return (
     <section className="py-20 md:py-28 bg-wolf-beige">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

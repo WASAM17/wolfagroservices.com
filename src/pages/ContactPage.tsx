@@ -21,10 +21,10 @@ const ContactPage = () => {
     setStatus('sending');
     try {
       await emailjs.send(
-        'service_j29ee2j',
-        'template_5pac2mj',
-        formData,
-        'vIiMCG_wQY4eZSVCk'
+        'service_87m5p6p',
+        'template_f9dn2af',
+        { ...formData, subject: `Contact – ${formData.name}${formData.company ? ` – ${formData.company}` : ''}` },
+        'GZQd9UkWSZa5yFIh6'
       );
       setStatus('sent');
       setFormData({ name: '', company: '', email: '', message: '' });

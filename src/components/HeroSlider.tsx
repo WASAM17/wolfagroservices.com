@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from '@/i18n';
 
 const SLIDES = [
   {
@@ -28,6 +29,8 @@ const SLIDES = [
 const INTERVAL = 5000; // 5 seconds
 
 const HeroSlider = () => {
+  const { t } = useTranslation();
+  const h = t.home;
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const [transitioning, setTransitioning] = useState(false);
@@ -117,22 +120,20 @@ const HeroSlider = () => {
             className="inline-block text-wolf-sand text-xs font-semibold tracking-widest uppercase mb-6 opacity-0 animate-fade-in"
             style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
           >
-            Sourcing & Export — Niger
+            {h.heroLabel}
           </span>
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight opacity-0 animate-fade-up"
             style={{ animationDelay: '0.35s', animationFillMode: 'forwards' }}
           >
-            Fournisseur structuré à l'origine.{' '}
-            <span className="text-wolf-sand">Export international.</span>
+            {h.heroTitle}{' '}
+            <span className="text-wolf-sand">{h.heroHighlight}</span>
           </h1>
           <p
             className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl leading-relaxed opacity-0 animate-fade-up"
             style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
           >
-            Wolf Agro Services approvisionne les marchés internationaux en produits agricoles
-            du Niger — gomme arabique, sésame, oignon de Galmi, arachide décortiquée.
-            Qualité contrôlée, logistique maîtrisée.
+            {h.heroDesc}
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up"
@@ -142,13 +143,13 @@ const HeroSlider = () => {
               to="/demande-offre"
               className="inline-flex items-center justify-center bg-wolf-sand text-white font-semibold px-8 py-4 rounded transition-colors hover:bg-wolf-sand/90 text-sm"
             >
-              Demander une offre commerciale
+              {h.heroCta1}
             </Link>
             <Link
               to="/produits"
               className="inline-flex items-center justify-center border-2 border-white/40 text-white font-semibold px-8 py-4 rounded transition-colors hover:border-white hover:bg-white/10 text-sm gap-2"
             >
-              Voir nos produits <ArrowRight size={16} />
+              {h.heroCta2} <ArrowRight size={16} />
             </Link>
           </div>
         </div>

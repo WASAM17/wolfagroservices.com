@@ -63,15 +63,15 @@ const RFQ = () => {
     setStatus('sending');
     try {
       await emailjs.send(
-        'service_j29ee2j',
-        'template_5pac2mj',
+        'service_87m5p6p',
+        'template_f9dn2af',
         {
           ...form,
           requestDatasheet: form.requestDatasheet ? 'Oui' : 'Non',
           requestSample: form.requestSample ? 'Oui' : 'Non',
           subject: `RFQ – ${form.product} – ${form.company}`,
         },
-        'vIiMCG_wQY4eZSVCk'
+        'GZQd9UkWSZa5yFIh6'
       );
       setStatus('sent');
       setForm(initial);
