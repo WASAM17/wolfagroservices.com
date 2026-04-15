@@ -620,4 +620,13 @@ export const fr = {
   },
 } as const;
 
-export type TranslationSchema = typeof fr;
+// Widen all leaf string literals to string so other locales can satisfy this type
+type DeepString<T> = T extends readonly (infer U)[]
+  ? readonly DeepString<U>[]
+  : T extends object
+  ? { [K in keyof T]: DeepString<T[K]> }
+  : T extends string
+  ? string
+  : T;
+
+export type TranslationSchema = DeepString<typeof fr>;

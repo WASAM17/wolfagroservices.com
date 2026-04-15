@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import HeroSlider from '@/components/HeroSlider';
 import { getLocalizedProducts } from '@/data/products-i18n';
@@ -52,7 +54,7 @@ const AboutPreview = () => {
               ))}
             </div>
             <Link
-              to="/about"
+              href="/about"
               className="inline-flex items-center gap-2 text-wolf-green font-semibold text-sm hover:text-wolf-dark-green transition-colors"
             >
               {t.common.learnMore} <ArrowRight size={16} />
@@ -117,7 +119,7 @@ const ProductsPreview = () => {
                   ))}
                 </div>
                 <Link
-                  to={`/produits/${product.slug}`}
+                  href={`/produits/${product.slug}`}
                   className="flex items-center justify-between text-wolf-green font-semibold text-sm hover:text-wolf-dark-green transition-colors group/link"
                 >
                   {t.common.viewProduct}
@@ -130,7 +132,7 @@ const ProductsPreview = () => {
 
         <div className="text-center mt-10">
           <Link
-            to="/produits"
+            href="/produits"
             className="inline-flex items-center gap-2 border-2 border-wolf-green text-wolf-green font-semibold px-6 py-3 rounded hover:bg-wolf-green hover:text-white transition-colors text-sm"
           >
             {t.common.viewFullCatalog} <ArrowRight size={15} />
@@ -197,7 +199,7 @@ const QualityExport = () => {
               ))}
             </ul>
             <Link
-              to="/qualite"
+              href="/qualite"
               className="inline-flex items-center gap-2 text-wolf-sand text-sm font-semibold hover:text-white transition-colors"
             >
               {t.common.qualityProcess} <ArrowRight size={15} />
@@ -216,7 +218,7 @@ const QualityExport = () => {
               ))}
             </ul>
             <Link
-              to="/export"
+              href="/export"
               className="inline-flex items-center gap-2 text-wolf-sand text-sm font-semibold hover:text-white transition-colors"
             >
               {t.common.exportLogistics} <ArrowRight size={15} />
@@ -246,7 +248,7 @@ const ImpactSection = () => {
             <p className="text-wolf-gray leading-relaxed mb-6">{t.home.impactP1}</p>
             <p className="text-wolf-gray leading-relaxed mb-8">{t.home.impactP2}</p>
             <Link
-              to="/impact"
+              href="/impact"
               className="inline-flex items-center gap-2 text-wolf-green font-semibold text-sm hover:text-wolf-dark-green transition-colors"
             >
               {t.common.ourApproach} <ArrowRight size={16} />
@@ -269,13 +271,13 @@ const CTAFinal = () => {
         <p className="text-wolf-gray text-lg mb-10 max-w-2xl mx-auto">{t.home.ctaDesc}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            to="/demande-offre"
+            href="/demande-offre"
             className="inline-flex items-center justify-center bg-wolf-green text-white font-semibold px-8 py-4 rounded hover:bg-wolf-dark-green transition-colors"
           >
             {t.common.requestQuote}
           </Link>
           <Link
-            to="/contact"
+            href="/contact"
             className="inline-flex items-center justify-center border-2 border-wolf-green text-wolf-green font-semibold px-8 py-4 rounded hover:bg-wolf-green hover:text-white transition-colors"
           >
             {t.common.talkToExport}

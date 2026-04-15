@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { CheckCircle, ArrowRight, Leaf, Users, Shield } from 'lucide-react';
 import { useTranslation } from '@/i18n';
@@ -28,13 +30,13 @@ const ESG = () => {
             <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-2xl">{e.heroP}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                to="/contact"
+                href="/contact"
                 className="inline-flex items-center justify-center bg-wolf-sand text-white font-semibold px-6 py-3 rounded hover:bg-wolf-sand/90 transition-colors text-sm"
               >
                 {e.heroCta1}
               </Link>
               <Link
-                to="/produits"
+                href="/produits"
                 className="inline-flex items-center justify-center border-2 border-white/40 text-white font-semibold px-6 py-3 rounded hover:border-white transition-colors text-sm"
               >
                 {e.heroCta2}
@@ -335,13 +337,13 @@ const ESG = () => {
             </ul>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/demande-offre"
+                href="/demande-offre"
                 className="inline-flex items-center justify-center bg-wolf-sand text-white font-semibold px-8 py-4 rounded hover:bg-wolf-sand/90 transition-colors"
               >
                 {e.ctaOffer}
               </Link>
               <Link
-                to="/contact"
+                href="/contact"
                 className="inline-flex items-center justify-center border-2 border-white/30 text-white font-semibold px-8 py-4 rounded hover:border-white transition-colors"
               >
                 {e.ctaTalk}

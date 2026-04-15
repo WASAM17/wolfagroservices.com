@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { getLocalizedProducts } from '@/data/products-i18n';
 import { ArrowRight } from 'lucide-react';
@@ -58,13 +60,13 @@ const Products = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
-                    to={`/produits/${product.slug}`}
+                    href={`/produits/${product.slug}`}
                     className="flex-1 inline-flex items-center justify-center bg-wolf-green text-white font-semibold px-5 py-3 rounded hover:bg-wolf-dark-green transition-colors text-sm"
                   >
                     {p.viewProduct}
                   </Link>
                   <Link
-                    to="/demande-offre"
+                    href="/demande-offre"
                     className="flex-1 inline-flex items-center justify-center border-2 border-wolf-green text-wolf-green font-semibold px-5 py-3 rounded hover:bg-wolf-green hover:text-white transition-colors text-sm"
                   >
                     {t.common.requestOffer}
@@ -83,7 +85,7 @@ const Products = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-wolf-dark-green mb-4">{p.ctaTitle}</h2>
         <p className="text-wolf-gray mb-8">{p.ctaDesc}</p>
         <Link
-          to="/contact"
+          href="/contact"
           className="inline-flex items-center gap-2 bg-wolf-green text-white font-semibold px-8 py-4 rounded hover:bg-wolf-dark-green transition-colors"
         >
           {t.common.talkToExport} <ArrowRight size={15} />

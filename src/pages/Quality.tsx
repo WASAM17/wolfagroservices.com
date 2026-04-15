@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { CheckCircle } from 'lucide-react';
 import { useTranslation } from '@/i18n';
@@ -122,13 +124,13 @@ const Quality = () => {
           <p className="text-white/70 mb-8">{q.ctaDesc}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/demande-offre"
+              href="/demande-offre"
               className="inline-flex items-center justify-center bg-wolf-sand text-white font-semibold px-8 py-4 rounded hover:bg-wolf-sand/90 transition-colors"
             >
               {t.common.requestQuote}
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center justify-center border-2 border-white/30 text-white font-semibold px-8 py-4 rounded hover:border-white transition-colors"
             >
               {t.common.talkToExport}

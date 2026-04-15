@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { X } from 'lucide-react';
 import { useTranslation } from '@/i18n';
 
@@ -73,7 +75,7 @@ const CookieBanner = () => {
             {l.bannerReject}
           </button>
           <Link
-            to="/politique-cookies"
+            href="/politique-cookies"
             className="w-full text-center text-wolf-sand/80 hover:text-wolf-sand text-xs py-1 transition-colors"
           >
             {l.bannerMore}
@@ -88,6 +90,7 @@ export default CookieBanner;
 
 /** Utility: read stored consent outside React */
 export const getStoredConsent = (): ConsentValue | null => {
+  if (typeof window === 'undefined') return null;
   const v = localStorage.getItem(STORAGE_KEY);
   return v === 'accepted' || v === 'rejected' ? v : null;
 };

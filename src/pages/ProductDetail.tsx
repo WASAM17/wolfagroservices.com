@@ -1,5 +1,8 @@
-import React from 'react';
-import { Link, useParams, Navigate } from 'react-router-dom';
+'use client';
+
+import React, { useEffect } from 'react';
+import Link from 'next/link';
+import { useParams, useRouter } from 'next/navigation';
 import Layout from '@/components/Layout';
 import { products } from '@/data/products';
 import { getLocalizedProductBySlug, getLocalizedProductById, getLocalizedProducts } from '@/data/products-i18n';
@@ -9,21 +12,29 @@ import { useTranslation } from '@/i18n';
 const ProductDetail = () => {
   const { t, locale } = useTranslation();
   const pd = t.productDetail;
-  const { id, slug } = useParams<{ id?: string; slug?: string }>();
+  const params = useParams();
+  const router = useRouter();
+
+  const slug = params?.slug as string | undefined;
+  const id = params?.id as string | undefined;
 
   // Support both /produits/:slug and legacy /product/:id
   const product = slug
     ? getLocalizedProductBySlug(slug, locale)
     : getLocalizedProductById(id || '', locale);
 
-  if (!product) {
-    // Try legacy id match
-    const legacyProduct = products.find((p) => p.id === (slug || id));
-    if (legacyProduct) {
-      return <Navigate to={`/produits/${legacyProduct.slug}`} replace />;
+  useEffect(() => {
+    if (!product) {
+      const legacyProduct = products.find((p) => p.id === (slug || id));
+      if (legacyProduct) {
+        router.replace(`/produits/${legacyProduct.slug}`);
+      } else {
+        router.replace('/produits');
+      }
     }
-    return <Navigate to="/produits" replace />;
-  }
+  }, [product, slug, id, router]);
+
+  if (!product) return null;
 
   const otherProducts = getLocalizedProducts(locale).filter((p) => p.id !== product.id);
 
@@ -38,7 +49,7 @@ const ProductDetail = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-wolf-dark-green/90 via-wolf-dark-green/50 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 w-full">
           <Link
-            to="/produits"
+            href="/produits"
             className="inline-flex items-center gap-2 text-white/70 text-sm mb-6 hover:text-white transition-colors"
           >
             <ArrowLeft size={14} /> {pd.backLink}
@@ -57,13 +68,13 @@ const ProductDetail = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
-              to="/demande-offre"
+              href="/demande-offre"
               className="inline-flex items-center justify-center bg-wolf-sand text-white font-semibold px-6 py-3 rounded hover:bg-wolf-sand/90 transition-colors text-sm"
             >
               {pd.requestOffer}
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center justify-center border-2 border-white/40 text-white font-semibold px-6 py-3 rounded hover:border-white transition-colors text-sm"
             >
               {pd.requestDatasheet}
@@ -227,13 +238,13 @@ const ProductDetail = () => {
           <p className="text-wolf-gray mb-8">{pd.ctaDesc}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/demande-offre"
+              href="/demande-offre"
               className="inline-flex items-center justify-center bg-wolf-green text-white font-semibold px-8 py-4 rounded hover:bg-wolf-dark-green transition-colors"
             >
               {pd.ctaRfq}
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center justify-center border-2 border-wolf-green text-wolf-green font-semibold px-8 py-4 rounded hover:bg-wolf-green hover:text-white transition-colors"
             >
               {pd.ctaTalk}
@@ -250,7 +261,7 @@ const ProductDetail = () => {
             {otherProducts.map((p) => (
               <Link
                 key={p.id}
-                to={`/produits/${p.slug}`}
+                href={`/produits/${p.slug}`}
                 className="group block bg-white rounded-lg overflow-hidden border border-wolf-beige hover:shadow-md transition-shadow"
               >
                 <div className="relative h-36 overflow-hidden">

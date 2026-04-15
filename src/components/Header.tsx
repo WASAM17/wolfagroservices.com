@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useTranslation, LOCALE_LABELS, type Locale } from '@/i18n';
 
@@ -9,7 +12,7 @@ const Header = () => {
   const [productsOpen, setProductsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
-  const location = useLocation();
+  const pathname = usePathname();
   const { t, locale, setLocale } = useTranslation();
 
   const navLinks = [
@@ -40,7 +43,7 @@ const Header = () => {
   useEffect(() => {
     setMobileOpen(false);
     setProductsOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   // Close lang dropdown on outside click
   useEffect(() => {
@@ -54,9 +57,9 @@ const Header = () => {
   }, []);
 
   const isActive = (href: string) =>
-    href === '/' ? location.pathname === '/' : location.pathname.startsWith(href);
+    href === '/' ? pathname === '/' : pathname.startsWith(href);
 
-  const locales = Object.keys(LOCALE_LABELS) as Locale[];
+  const localeKeys = Object.keys(LOCALE_LABELS) as Locale[];
 
   return (
     <>
@@ -70,7 +73,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 flex-shrink-0">
+            <Link href="/" className="flex items-center gap-3 flex-shrink-0">
               <img
                 src="/lovable-uploads/logo.png"
                 alt="Wolf Agro Services"
@@ -89,7 +92,7 @@ const Header = () => {
                     onMouseLeave={() => setProductsOpen(false)}
                   >
                     <Link
-                      to={link.href}
+                      href={link.href}
                       className={`flex items-center gap-1 text-sm font-medium transition-colors ${
                         scrolled
                           ? isActive(link.href)
@@ -108,7 +111,7 @@ const Header = () => {
                         {link.children.map((child) => (
                           <Link
                             key={child.href}
-                            to={child.href}
+                            href={child.href}
                             className="block px-4 py-2.5 text-sm text-wolf-dark hover:bg-wolf-beige hover:text-wolf-green transition-colors"
                           >
                             {child.label}
@@ -120,7 +123,7 @@ const Header = () => {
                 ) : (
                   <Link
                     key={link.href}
-                    to={link.href}
+                    href={link.href}
                     className={`text-sm font-medium transition-colors ${
                       scrolled
                         ? isActive(link.href)
@@ -155,7 +158,7 @@ const Header = () => {
                 </button>
                 {langOpen && (
                   <div className="absolute right-0 top-full mt-1.5 bg-white border border-gray-100 rounded-lg shadow-lg py-1 w-24 z-50">
-                    {locales.map((l) => (
+                    {localeKeys.map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLocale(l); setLangOpen(false); }}
@@ -173,7 +176,7 @@ const Header = () => {
               </div>
 
               <Link
-                to="/demande-offre"
+                href="/demande-offre"
                 className="hidden md:inline-flex items-center bg-wolf-sand text-white text-sm font-semibold px-4 py-2.5 rounded transition-colors hover:bg-wolf-sand/90"
               >
                 {t.nav.rfq}
@@ -200,7 +203,7 @@ const Header = () => {
               {navLinks.map((link) => (
                 <div key={link.href}>
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className={`block py-3 text-sm font-medium border-b border-gray-50 transition-colors ${
                       isActive(link.href)
                         ? 'text-wolf-green'
@@ -214,7 +217,7 @@ const Header = () => {
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
-                          to={child.href}
+                          href={child.href}
                           className="block py-2.5 pl-6 pr-4 text-sm text-wolf-gray hover:text-wolf-green border-b border-gray-50 transition-colors"
                         >
                           {child.label}
@@ -226,7 +229,7 @@ const Header = () => {
               ))}
               {/* Mobile language selector */}
               <div className="flex items-center gap-2 mt-4 mb-2">
-                {locales.map((l) => (
+                {localeKeys.map((l) => (
                   <button
                     key={l}
                     onClick={() => setLocale(l)}
@@ -241,7 +244,7 @@ const Header = () => {
                 ))}
               </div>
               <Link
-                to="/demande-offre"
+                href="/demande-offre"
                 className="mt-2 block text-center bg-wolf-green text-white text-sm font-semibold px-4 py-3 rounded transition-colors hover:bg-wolf-dark-green"
               >
                 {t.nav.rfq}
@@ -254,7 +257,7 @@ const Header = () => {
       {/* Mobile sticky CTA */}
       <div className="fixed bottom-0 left-0 w-full z-40 lg:hidden">
         <Link
-          to="/demande-offre"
+          href="/demande-offre"
           className="flex items-center justify-center bg-wolf-green text-white text-sm font-semibold py-4 shadow-lg hover:bg-wolf-dark-green transition-colors"
         >
           {t.nav.mobileRfq}

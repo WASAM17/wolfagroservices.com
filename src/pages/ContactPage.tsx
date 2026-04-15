@@ -1,8 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import Layout from '@/components/Layout';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '@/lib/emailjs-config';
 import { CONTACT } from '@/lib/contact';
 import { useTranslation } from '@/i18n';
@@ -138,7 +140,7 @@ const ContactPage = () => {
                   </button>
                   <p className="text-wolf-gray text-xs">
                     {c.rfqNote}{' '}
-                    <Link to="/demande-offre" className="text-wolf-green underline">{c.rfqLink}</Link>.
+                    <Link href="/demande-offre" className="text-wolf-green underline">{c.rfqLink}</Link>.
                   </p>
                 </form>
               )}
@@ -225,7 +227,7 @@ const ContactPage = () => {
                 <h3 className="font-bold text-wolf-dark-green mb-2 text-sm">{c.rfqSectionTitle}</h3>
                 <p className="text-wolf-gray text-sm mb-4">{c.rfqSectionDesc}</p>
                 <Link
-                  to="/demande-offre"
+                  href="/demande-offre"
                   className="inline-flex items-center gap-2 text-wolf-green font-semibold text-sm hover:text-wolf-dark-green transition-colors"
                 >
                   {t.common.goToRfq} <ArrowRight size={14} />

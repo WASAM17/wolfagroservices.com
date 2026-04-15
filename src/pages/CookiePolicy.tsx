@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import LegalPage from '@/components/LegalPage';
 import { useTranslation, type Locale } from '@/i18n';

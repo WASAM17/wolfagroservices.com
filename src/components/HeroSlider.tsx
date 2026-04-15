@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from '@/i18n';
 
@@ -140,13 +142,13 @@ const HeroSlider = () => {
             style={{ animationDelay: '0.65s', animationFillMode: 'forwards' }}
           >
             <Link
-              to="/demande-offre"
+              href="/demande-offre"
               className="inline-flex items-center justify-center bg-wolf-sand text-white font-semibold px-8 py-4 rounded transition-colors hover:bg-wolf-sand/90 text-sm"
             >
               {h.heroCta1}
             </Link>
             <Link
-              to="/produits"
+              href="/produits"
               className="inline-flex items-center justify-center border-2 border-white/40 text-white font-semibold px-8 py-4 rounded transition-colors hover:border-white hover:bg-white/10 text-sm gap-2"
             >
               {h.heroCta2} <ArrowRight size={16} />

@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { CONTACT } from '@/lib/contact';
 import { useTranslation } from '@/i18n';
@@ -57,7 +59,7 @@ const Footer = () => {
               {navLinks.map(([label, href]) => (
                 <li key={href}>
                   <Link
-                    to={href}
+                    href={href}
                     className="text-white/60 text-sm hover:text-wolf-sand transition-colors"
                   >
                     {label}
@@ -74,7 +76,7 @@ const Footer = () => {
               {productLinks.map(([label, href]) => (
                 <li key={href}>
                   <Link
-                    to={href}
+                    href={href}
                     className="text-white/60 text-sm hover:text-wolf-sand transition-colors"
                   >
                     {label}
@@ -139,15 +141,15 @@ const Footer = () => {
             © {year} Wolf Agro Services. {t.footer.rights}
           </p>
           <div className="flex items-center gap-4 flex-wrap justify-center">
-            <Link to="/cgu" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+            <Link href="/cgu" className="text-white/30 text-xs hover:text-white/60 transition-colors">
               {t.legal.footerCgu}
             </Link>
             <span className="text-white/20 text-xs">·</span>
-            <Link to="/politique-confidentialite" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+            <Link href="/politique-confidentialite" className="text-white/30 text-xs hover:text-white/60 transition-colors">
               {t.legal.footerPrivacy}
             </Link>
             <span className="text-white/20 text-xs">·</span>
-            <Link to="/politique-cookies" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+            <Link href="/politique-cookies" className="text-white/30 text-xs hover:text-white/60 transition-colors">
               {t.legal.footerCookies}
             </Link>
           </div>

@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/i18n';
@@ -170,13 +172,13 @@ const Export = () => {
           <p className="text-wolf-gray mb-8">{e.ctaDesc}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/demande-offre"
+              href="/demande-offre"
               className="inline-flex items-center justify-center bg-wolf-green text-white font-semibold px-8 py-4 rounded hover:bg-wolf-dark-green transition-colors"
             >
               {t.common.requestQuote}
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center justify-center border-2 border-wolf-green text-wolf-green font-semibold px-8 py-4 rounded hover:bg-wolf-green hover:text-white transition-colors"
             >
               {t.common.contactUs}

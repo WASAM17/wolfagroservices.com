@@ -1,7 +1,9 @@
+'use client';
+
 import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 import { CheckCircle } from 'lucide-react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '@/lib/emailjs-config';
 import { CONTACT } from '@/lib/contact';
 import { useTranslation } from '@/i18n';

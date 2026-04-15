@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/i18n';
@@ -107,7 +109,7 @@ const Impact = () => {
         <h2 className="text-3xl font-bold text-wolf-dark-green mb-4">{i.ctaTitle}</h2>
         <p className="text-wolf-gray mb-8">{i.ctaDesc}</p>
         <Link
-          to="/demande-offre"
+          href="/demande-offre"
           className="inline-flex items-center justify-center bg-wolf-green text-white font-semibold px-8 py-4 rounded hover:bg-wolf-dark-green transition-colors"
         >
           {t.common.requestOffer} <ArrowRight size={15} className="ml-2" />

@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
 import Layout from '@/components/Layout';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useTranslation } from '@/i18n';
 
 const PHOTO_SRCS = [
@@ -64,7 +66,7 @@ const Gallery = () => {
         <h2 className="text-2xl font-bold text-wolf-dark-green mb-4">{g.ctaTitle}</h2>
         <p className="text-wolf-gray mb-8">{g.ctaDesc}</p>
         <Link
-          to="/contact"
+          href="/contact"
           className="inline-flex items-center justify-center bg-wolf-green text-white font-semibold px-8 py-4 rounded hover:bg-wolf-dark-green transition-colors"
         >
           {t.common.contactUs}

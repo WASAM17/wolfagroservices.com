@@ -1,4 +1,6 @@
-import React, { createContext, useContext, useState } from 'react';
+'use client';
+
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { fr } from './locales/fr';
 import { en } from './locales/en';
 import { zh } from './locales/zh';
@@ -28,16 +30,18 @@ const LanguageContext = createContext<LanguageContextType>({
   t: fr,
 });
 
-const getInitialLocale = (): Locale => {
-  try {
-    const stored = localStorage.getItem('wolf-locale');
-    if (stored && stored in locales) return stored as Locale;
-  } catch {}
-  return 'fr';
-};
-
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [locale, setLocaleState] = useState<Locale>(getInitialLocale);
+  // Start with 'fr' on server; hydrate from localStorage on client
+  const [locale, setLocaleState] = useState<Locale>('fr');
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('wolf-locale');
+      if (stored && stored in locales) {
+        setLocaleState(stored as Locale);
+      }
+    } catch {}
+  }, []);
 
   const setLocale = (l: Locale) => {
     setLocaleState(l);
