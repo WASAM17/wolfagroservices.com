@@ -3,6 +3,7 @@ import Layout from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import emailjs from 'emailjs-com';
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '@/lib/emailjs-config';
 import { CONTACT } from '@/lib/contact';
 import { useTranslation } from '@/i18n';
 
@@ -21,10 +22,10 @@ const ContactPage = () => {
     setStatus('sending');
     try {
       await emailjs.send(
-        'service_87m5p6p',
-        'template_f9dn2af',
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         { ...formData, subject: `Contact – ${formData.name}${formData.company ? ` – ${formData.company}` : ''}` },
-        'GZQd9UkWSZa5yFIh6'
+        EMAILJS_PUBLIC_KEY
       );
       setStatus('sent');
       setFormData({ name: '', company: '', email: '', message: '' });

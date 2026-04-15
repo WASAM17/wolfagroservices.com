@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 import { CheckCircle } from 'lucide-react';
 import emailjs from 'emailjs-com';
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '@/lib/emailjs-config';
 import { CONTACT } from '@/lib/contact';
 import { useTranslation } from '@/i18n';
 
@@ -63,15 +64,15 @@ const RFQ = () => {
     setStatus('sending');
     try {
       await emailjs.send(
-        'service_87m5p6p',
-        'template_f9dn2af',
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
           ...form,
           requestDatasheet: form.requestDatasheet ? 'Oui' : 'Non',
           requestSample: form.requestSample ? 'Oui' : 'Non',
           subject: `RFQ – ${form.product} – ${form.company}`,
         },
-        'GZQd9UkWSZa5yFIh6'
+        EMAILJS_PUBLIC_KEY
       );
       setStatus('sent');
       setForm(initial);
