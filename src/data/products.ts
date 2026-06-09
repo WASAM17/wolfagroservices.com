@@ -25,6 +25,7 @@ export interface Product {
   differentiation: string[];
   markets?: string[];
   image: string;
+  images?: string[];
   color: string;
 }
 
@@ -302,6 +303,78 @@ export const products: Product[] = [
     ],
     image: '/lovable-uploads/arachide.jpeg',
     color: '#C9A96E',
+  },
+  {
+    id: 'tiger-nut',
+    slug: 'souchet',
+    name: 'Souchet du Niger',
+    subtitle: 'Cyperus esculentus – Matière première d\'origine sahélienne',
+    heroTagline: 'Matière première d\'origine sahélienne pour les marchés internationaux',
+    heroDesc: 'Nous opérons une chaîne d\'approvisionnement organisée directement depuis les zones de production du Niger, calée sur la saison de récolte, pour répondre aux exigences des transformateurs et importateurs internationaux.',
+    highlights: [
+      'Disponibilité : octobre à mars',
+      'Capacité export : jusqu\'à 2 conteneurs 20\' / mois',
+      'Qualité inspectée et certifiée Bureau Veritas avant expédition',
+    ],
+    positioning: 'Nous opérons une chaîne d\'approvisionnement organisée directement depuis les zones de production du Niger, calée sur la saison de récolte. Le souchet nigérien est reconnu pour sa richesse naturelle en huile, sa saveur douce et sa teneur élevée en fibres alimentaires. Cultivé dans des zones sahéliennes particulièrement favorables, il constitue une matière première recherchée par les industries de transformation, de la boisson végétale et de l\'agroalimentaire.',
+    positioningPoints: [
+      'Régularité des volumes sur toute la fenêtre d\'exportation',
+      'Stabilité de la qualité lot après lot',
+      'Traçabilité complète de l\'origine, de la collecte jusqu\'à l\'expédition',
+      'Inspection indépendante Bureau Veritas avant chaque chargement',
+    ],
+    specs: [
+      { label: 'Origine botanique', value: 'Cyperus esculentus (souchet)' },
+      { label: 'Origine géographique', value: 'Niger' },
+      { label: 'Forme', value: 'Tubercules séchés entiers' },
+      { label: 'Couleur', value: 'Beige à brun clair' },
+      { label: 'Humidité', value: '≤ 8 %' },
+      { label: 'Impuretés', value: '≤ 1 %' },
+      { label: 'Traitement', value: 'Trié, nettoyé et séché naturellement' },
+      { label: 'Conditionnement', value: 'Sacs PP 50 kg' },
+    ],
+    usages: [
+      'Industrie des boissons – lait végétal (horchata / chufa), smoothies, préparations fonctionnelles',
+      'Industrie agroalimentaire – farine de souchet, snacking naturel, barres énergétiques',
+      'Industrie cosmétique & nutraceutique – huile de souchet, poudre riche en fibres et en amidon',
+      'Alimentation animale – compléments naturels riches en énergie',
+    ],
+    capacity: 'Jusqu\'à 2 conteneurs 20\' par mois (≈ 18,7 t/conteneur)',
+    capacityPoints: [
+      'Disponibilité : octobre à mars',
+      'Jusqu\'à 2 conteneurs 20\' par mois',
+      'Environ 18,7 tonnes par conteneur',
+      'Volumes supérieurs mobilisables selon engagements contractuels',
+      'Réseau de collecte organisé dans les zones de production',
+    ],
+    availability: 'Disponibilité saisonnière : octobre à mars',
+    qualityDesc: 'Chaque lot fait l\'objet d\'une inspection par Bureau Veritas avant expédition. Des analyses complémentaires en laboratoire indépendant sont disponibles sur demande.',
+    qualityPoints: [
+      'Analyse physico-chimique (humidité, teneur en huile, amidon)',
+      'Analyse microbiologique',
+      'Métaux lourds et résidus pesticides',
+      'Conformité aux normes import (UE, CODEX)',
+    ],
+    logistique: 'FOB Cotonou – CIF toutes destinations mondiales · Incoterm négociable',
+    logistiquePoints: [
+      'FOB : Port de Cotonou',
+      'CIF : Toutes destinations mondiales',
+      'Incoterm négociable (FOB / CIF)',
+      'Documentation export complète (certificats, phytosanitaire, conformité)',
+      'Conditionnement : Sacs PP 50 kg',
+    ],
+    differentiation: [
+      'Approvisionnement directement à l\'origine – sans intermédiaires inutiles',
+      'Inspection Bureau Veritas systématique – certification indépendante avant chaque chargement',
+      'Traçabilité des lots – de la collecte jusqu\'au port d\'embarquement',
+      'Flexibilité des volumes – adaptation selon vos besoins et engagements',
+      'Accompagnement documentaire export – certificats, phytosanitaire, conformité',
+      'Conditions commerciales adaptées aux importateurs et transformateurs internationaux',
+    ],
+    markets: ['Espagne', 'Europe', 'Moyen-Orient', 'Amérique du Nord'],
+    image: '/lovable-uploads/souchet-1.jpeg',
+    images: ['/lovable-uploads/souchet-1.jpeg', '/lovable-uploads/souchet-2.jpeg'],
+    color: '#A0784A',
   },
 ];
 

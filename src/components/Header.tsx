@@ -26,6 +26,7 @@ const Header = () => {
         { label: t.nav.sesame, href: '/produits/sesame' },
         { label: t.nav.onion, href: '/produits/oignon-galmi' },
         { label: t.nav.peanut, href: '/produits/arachide' },
+        { label: t.nav.souchet, href: '/produits/souchet' },
       ],
     },
     { label: t.nav.export, href: '/export' },

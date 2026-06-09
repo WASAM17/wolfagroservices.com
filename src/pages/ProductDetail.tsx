@@ -8,6 +8,7 @@ import { products } from '@/data/products';
 import { getLocalizedProductBySlug, getLocalizedProductById, getLocalizedProducts } from '@/data/products-i18n';
 import { ArrowRight, CheckCircle, ArrowLeft } from 'lucide-react';
 import { useTranslation } from '@/i18n';
+import ProductImageCarousel from '@/components/ProductImageCarousel';
 
 const ProductDetail = () => {
   const { t, locale } = useTranslation();
@@ -82,6 +83,15 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Photo gallery – shown only when product has multiple images */}
+      {product.images && product.images.length > 1 && (
+        <section className="py-10 bg-wolf-beige">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ProductImageCarousel images={product.images} productName={product.name} />
+          </div>
+        </section>
+      )}
 
       {/* Description */}
       <section className="py-16 bg-white">

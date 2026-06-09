@@ -15,6 +15,7 @@ export const zh: TranslationSchema = {
     sesame: "尼日尔芝麻",
     onion: "加尔米紫洋葱",
     peanut: "去壳花生",
+    souchet: "尼日尔香核果（虎坚果）",
   },
   common: {
     learnMore: "了解更多",
@@ -71,7 +72,7 @@ export const zh: TranslationSchema = {
     ],
     catalogLabel: "产品目录",
     catalogTitle: "我们的出口产品",
-    catalogDesc: "来自尼日尔最佳农业区的四大主打产品，可提供定期出口量。",
+    catalogDesc: "来自尼日尔最佳农业区的五大主打产品，可提供定期出口量。",
     whyLabel: "为何选择我们",
     whyTitle: "我们的独特优势",
     whyItems: [
@@ -173,7 +174,7 @@ export const zh: TranslationSchema = {
   products: {
     heroLabel: "产品目录",
     heroTitle: "我们的出口产品",
-    heroSubtitle: "来自尼日尔最佳农业区的四大主打产品。直接采购，质量管控，国际出口定期供货。",
+    heroSubtitle: "来自尼日尔最佳农业区的五大主打产品。直接采购，质量管控，国际出口定期供货。",
     viewProduct: "查看产品",
     highlights: "产品亮点",
     specs: "技术规格",
@@ -265,9 +266,10 @@ export const zh: TranslationSchema = {
     capacityTitle: "各产品出口产能",
     capacityItems: [
       { produit: "阿拉伯胶", volume: "每月1-3个集装箱", note: "≈ 18.7 吨/箱" },
-      { produit: "芝麻", volume: "15个20\"集装箱", note: "≈ 每季280吨" },
+      { produit: "芝麻", volume: "15个20'集装箱", note: "≈ 每季280吨" },
       { produit: "加尔米洋葱", volume: "每月75吨", note: "季节：2月–5月" },
       { produit: "去壳花生", volume: "每月1-3个集装箱", note: "≈ 18.7 吨/箱" },
+      { produit: "香核果（虎坚果）", volume: "每月最多2个20'集装箱", note: "≈ 18.7 吨/箱 · 10月–3月" },
     ],
     presenceLabel: "国际存在",
     presenceTitle: "10个合作国家，全球发货",

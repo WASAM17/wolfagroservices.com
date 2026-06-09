@@ -15,6 +15,7 @@ export const de: TranslationSchema = {
     sesame: "Niger-Sesam",
     onion: "Galmi-Purpurzwiebel",
     peanut: "Geschälte Erdnuss",
+    souchet: "Niger Erdmandel (Chufa)",
   },
   common: {
     learnMore: "Mehr erfahren",
@@ -72,7 +73,7 @@ export const de: TranslationSchema = {
     catalogLabel: "Katalog",
     catalogTitle: "Unsere Exportprodukte",
     catalogDesc:
-      "Vier Flaggschiff-Produkte aus den besten Agrargebieten Nigers, in regelmäßigen Exportmengen verfügbar.",
+      "Fünf Flaggschiff-Produkte aus den besten Agrargebieten Nigers, in regelmäßigen Exportmengen verfügbar.",
     whyLabel: "Warum uns wählen",
     whyTitle: "Was uns unterscheidet",
     whyItems: [
@@ -177,7 +178,7 @@ export const de: TranslationSchema = {
     heroLabel: "Katalog",
     heroTitle: "Unsere Exportprodukte",
     heroSubtitle:
-      "Vier Flaggschiff-Produkte aus den besten Agrargebieten Nigers. Direktes Sourcing, kontrollierte Qualität, regelmäßige Mengen für den internationalen Export.",
+      "Fünf Flaggschiff-Produkte aus den besten Agrargebieten Nigers. Direktes Sourcing, kontrollierte Qualität, regelmäßige Mengen für den internationalen Export.",
     viewProduct: "Produkt ansehen",
     highlights: "Hauptpunkte",
     specs: "Technisches Datenblatt",
@@ -270,9 +271,10 @@ export const de: TranslationSchema = {
     capacityTitle: "Exportkapazität nach Produkt",
     capacityItems: [
       { produit: "Arabisches Gummi", volume: "1 bis 3 Container/Monat", note: "≈ 18,7 t/Container" },
-      { produit: "Sesam", volume: "15 x 20\"-Container", note: "≈ 280 t pro Kampagne" },
+      { produit: "Sesam", volume: "15 x 20'-Container", note: "≈ 280 t pro Kampagne" },
       { produit: "Galmi-Zwiebel", volume: "75 Tonnen/Monat", note: "Saison: Feb – Mai" },
       { produit: "Geschälte Erdnuss", volume: "1 bis 3 Container/Monat", note: "≈ 18,7 t/Container" },
+      { produit: "Erdmandel (Chufa)", volume: "Bis zu 2 x 20'-Container/Monat", note: "≈ 18,7 t/Container · Okt–März" },
     ],
     presenceLabel: "Internationale Präsenz",
     presenceTitle: "10 Partnerländer, weltweiter Versand",

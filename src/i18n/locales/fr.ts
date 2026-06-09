@@ -13,6 +13,7 @@ export const fr = {
     sesame: "Sésame du Niger",
     onion: "Oignon violet de Galmi",
     peanut: "Graine d'arachide",
+    souchet: 'Souchet du Niger',
   },
   common: {
     learnMore: "En savoir plus",
@@ -70,7 +71,7 @@ export const fr = {
     catalogLabel: "Catalogue",
     catalogTitle: "Nos produits d'exportation",
     catalogDesc:
-      "Quatre produits phares, issus des meilleures zones agricoles du Niger, disponibles en volumes export réguliers.",
+      "Cinq produits phares, issus des meilleures zones agricoles du Niger, disponibles en volumes export réguliers.",
     whyLabel: "Pourquoi nous choisir",
     whyTitle: "Ce qui nous distingue",
     whyItems: [
@@ -175,7 +176,7 @@ export const fr = {
     heroLabel: "Catalogue",
     heroTitle: "Nos produits d'exportation",
     heroSubtitle:
-      "Quatre produits phares issus des meilleures zones agricoles du Niger. Sourcing direct, qualité contrôlée, volumes réguliers pour l'export international.",
+      "Cinq produits phares issus des meilleures zones agricoles du Niger. Sourcing direct, qualité contrôlée, volumes réguliers pour l'export international.",
     viewProduct: "Voir le produit",
     highlights: "Points clés",
     specs: "Fiche technique",
@@ -268,9 +269,10 @@ export const fr = {
     capacityTitle: "Capacités d'export par produit",
     capacityItems: [
       { produit: "Gomme arabique", volume: "1 à 3 conteneurs/mois", note: "≈ 18,7 t/conteneur" },
-      { produit: "Sésame", volume: "15 conteneurs 20\"", note: "≈ 280 t par campagne" },
+      { produit: "Sésame", volume: "15 conteneurs 20'", note: "≈ 280 t par campagne" },
       { produit: "Oignon de Galmi", volume: "75 tonnes/mois", note: "Campagne : fév – mai" },
       { produit: "Arachide décortiquée", volume: "1 à 3 conteneurs/mois", note: "≈ 18,7 t/conteneur" },
+      { produit: "Souchet (chufa)", volume: "Jusqu'à 2 conteneurs 20'/mois", note: "≈ 18,7 t/conteneur · Oct–Mars" },
     ],
     presenceLabel: "Présence internationale",
     presenceTitle: "10 pays partenaires, world-wide shipping",

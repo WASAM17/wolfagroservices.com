@@ -15,6 +15,7 @@ export const en: TranslationSchema = {
     sesame: "Niger Sesame",
     onion: "Galmi Purple Onion",
     peanut: "Shelled Groundnut",
+    souchet: "Niger Tiger Nut (Chufa)",
   },
   common: {
     learnMore: "Learn more",
@@ -72,7 +73,7 @@ export const en: TranslationSchema = {
     catalogLabel: "Catalogue",
     catalogTitle: "Our export products",
     catalogDesc:
-      "Four flagship products from the best agricultural areas of Niger, available in regular export volumes.",
+      "Five flagship products from the best agricultural areas of Niger, available in regular export volumes.",
     whyLabel: "Why choose us",
     whyTitle: "What sets us apart",
     whyItems: [
@@ -177,7 +178,7 @@ export const en: TranslationSchema = {
     heroLabel: "Catalogue",
     heroTitle: "Our export products",
     heroSubtitle:
-      "Four flagship products from Niger's best agricultural zones. Direct sourcing, controlled quality, regular volumes for international export.",
+      "Five flagship products from Niger's best agricultural zones. Direct sourcing, controlled quality, regular volumes for international export.",
     viewProduct: "View product",
     highlights: "Key points",
     specs: "Technical sheet",
@@ -270,9 +271,10 @@ export const en: TranslationSchema = {
     capacityTitle: "Export capacity by product",
     capacityItems: [
       { produit: "Gum Arabic", volume: "1 to 3 containers/month", note: "≈ 18.7 t/container" },
-      { produit: "Sesame", volume: "15 x 20\" containers", note: "≈ 280 t per campaign" },
+      { produit: "Sesame", volume: "15 x 20' containers", note: "≈ 280 t per campaign" },
       { produit: "Galmi Onion", volume: "75 tonnes/month", note: "Season: Feb – May" },
       { produit: "Shelled Groundnut", volume: "1 to 3 containers/month", note: "≈ 18.7 t/container" },
+      { produit: "Tiger Nut (Chufa)", volume: "Up to 2 x 20' containers/month", note: "≈ 18.7 t/container · Oct–Mar" },
     ],
     presenceLabel: "International presence",
     presenceTitle: "10 partner countries, worldwide shipping",
