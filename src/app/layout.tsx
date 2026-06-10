@@ -53,9 +53,9 @@ export const metadata: Metadata = {
 
   // ── Favicon & icons ─────────────────────────────────────────────────────
   icons: {
-    icon: '/lovable-uploads/80dafe9d-b856-43df-af4f-f65a5bd6e3c5.png',
-    shortcut: '/lovable-uploads/80dafe9d-b856-43df-af4f-f65a5bd6e3c5.png',
-    apple: '/lovable-uploads/80dafe9d-b856-43df-af4f-f65a5bd6e3c5.png',
+    icon: '/lovable-uploads/logo.png',
+    shortcut: '/lovable-uploads/logo.png',
+    apple: '/lovable-uploads/logo.png',
   },
 
   // ── Canonical & verification ─────────────────────────────────────────────
@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'Organization',
               name: 'Wolf Agro Services',
               url: BASE_URL,
-              logo: `${BASE_URL}/lovable-uploads/80dafe9d-b856-43df-af4f-f65a5bd6e3c5.png`,
+              logo: `${BASE_URL}/lovable-uploads/logo.png`,
               email: 'contact@wolfagroservices.com',
               telephone: '+22720353509',
               address: {
