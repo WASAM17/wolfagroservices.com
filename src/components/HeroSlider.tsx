@@ -26,6 +26,10 @@ const SLIDES = [
     src: '/lovable-uploads/banniere-5.jpeg',
     overlay: 'bg-wolf-dark-green/60',
   },
+  {
+    src: '/lovable-uploads/souchet-2.jpeg',
+    overlay: 'bg-wolf-dark-green/60',
+  },
 ];
 
 const INTERVAL = 5000; // 5 seconds

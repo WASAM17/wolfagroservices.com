@@ -373,7 +373,6 @@ export const products: Product[] = [
     ],
     markets: ['Espagne', 'Europe', 'Moyen-Orient', 'Amérique du Nord'],
     image: '/lovable-uploads/souchet-1.jpeg',
-    images: ['/lovable-uploads/souchet-1.jpeg', '/lovable-uploads/souchet-2.jpeg'],
     color: '#A0784A',
   },
 ];

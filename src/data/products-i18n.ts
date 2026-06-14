@@ -354,7 +354,6 @@ const en: Product[] = [
     ],
     markets: ['Spain', 'Europe', 'Middle East', 'North America'],
     image: '/lovable-uploads/souchet-1.jpeg',
-    images: ['/lovable-uploads/souchet-1.jpeg', '/lovable-uploads/souchet-2.jpeg'],
     color: '#A0784A',
   },
 ];
@@ -712,7 +711,6 @@ const de: Product[] = [
     ],
     markets: ['Spanien', 'Europa', 'Naher Osten', 'Nordamerika'],
     image: '/lovable-uploads/souchet-1.jpeg',
-    images: ['/lovable-uploads/souchet-1.jpeg', '/lovable-uploads/souchet-2.jpeg'],
     color: '#A0784A',
   },
 ];
@@ -1013,7 +1011,6 @@ const zh: Product[] = [
     ],
     markets: ['西班牙', '欧洲', '中东', '北美'],
     image: '/lovable-uploads/souchet-1.jpeg',
-    images: ['/lovable-uploads/souchet-1.jpeg', '/lovable-uploads/souchet-2.jpeg'],
     color: '#A0784A',
   },
 ];
