@@ -419,7 +419,7 @@ export const es: TranslationSchema = {
     companyLabel: "Empresa",
     companyPlaceholder: "Su empresa",
     emailLabel: "Email profesional *",
-    emailPlaceholder: "su@email.com",
+    emailPlaceholder: "j.garcia@empresa.com",
     messageLabel: "Mensaje *",
     messagePlaceholder: "Describa su solicitud...",
     submitBtn: "Enviar el mensaje",
