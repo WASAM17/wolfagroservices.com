@@ -464,6 +464,13 @@ export const zh: TranslationSchema = {
       "可签订长期合同",
     ],
     ourProducts: "我们的产品",
+    productsList: [
+      "阿拉伯胶 (E414)",
+      "尼日尔天然芝麻",
+      "加尔米紫皮洋葱",
+      "去壳花生",
+      "尼日尔香核果（虎坚果）",
+    ],
     selectProduct: "选择产品",
     selectIncoterm: "选择贸易术语",
     countryPlaceholder: "例如：法国、德国、中国...",

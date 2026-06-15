@@ -475,6 +475,13 @@ export const de: TranslationSchema = {
       "Langzeitverträge möglich",
     ],
     ourProducts: "Unsere Produkte",
+    productsList: [
+      "Gummi Arabicum (E414)",
+      "Natürlicher Sesam aus Niger",
+      "Galmi-Zwiebel",
+      "Geschälte Erdnuss",
+      "Niger Erdmandel (Chufa)",
+    ],
     selectProduct: "Produkt auswählen",
     selectIncoterm: "Incoterm auswählen",
     countryPlaceholder: "Z.B.: Frankreich, Deutschland, China...",

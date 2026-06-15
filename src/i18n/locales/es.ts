@@ -477,6 +477,13 @@ export const es: TranslationSchema = {
       "Contratos a largo plazo posibles",
     ],
     ourProducts: "Nuestros productos",
+    productsList: [
+      "Goma Arábiga (E414)",
+      "Sésamo Natural de Níger",
+      "Cebolla Morada de Galmi",
+      "Cacahuete Descascarillado",
+      "Chufa del Níger",
+    ],
     selectProduct: "Seleccione un producto",
     selectIncoterm: "Seleccione un incoterm",
     countryPlaceholder: "Ej: España, Francia, China...",

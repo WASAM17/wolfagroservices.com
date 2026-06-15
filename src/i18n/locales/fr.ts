@@ -474,6 +474,13 @@ export const fr = {
       "Contrats long terme possibles",
     ],
     ourProducts: "Nos produits",
+    productsList: [
+      "Gomme arabique (E414)",
+      "Sésame naturel du Niger",
+      "Oignon violet de Galmi",
+      "Graine d'arachide décortiquée",
+      "Souchet du Niger (Chufa)",
+    ],
     selectProduct: "Sélectionnez un produit",
     selectIncoterm: "Sélectionnez un incoterm",
     countryPlaceholder: "Ex: France, Allemagne, Chine...",

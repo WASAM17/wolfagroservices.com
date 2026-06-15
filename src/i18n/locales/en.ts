@@ -476,6 +476,13 @@ export const en: TranslationSchema = {
       "Long-term contracts possible",
     ],
     ourProducts: "Our products",
+    productsList: [
+      "Gum Arabic (E414)",
+      "Natural Niger Sesame",
+      "Galmi Purple Onion",
+      "Shelled Groundnut",
+      "Niger Tiger Nut (Chufa)",
+    ],
     selectProduct: "Select a product",
     selectIncoterm: "Select an incoterm",
     countryPlaceholder: "E.g.: France, Germany, China...",

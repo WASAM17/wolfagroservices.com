@@ -46,12 +46,7 @@ const RFQ = () => {
   const { t } = useTranslation();
   const r = t.rfq;
 
-  const PRODUCTS = [
-    'Gomme arabique (E414)',
-    'Sésame naturel du Niger',
-    'Oignon violet de Galmi',
-    "Graine d'arachide décortiquée",
-  ];
+  const PRODUCTS = r.productsList;
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
