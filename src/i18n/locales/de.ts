@@ -417,7 +417,7 @@ export const de: TranslationSchema = {
     companyLabel: "Unternehmen",
     companyPlaceholder: "Ihr Unternehmen",
     emailLabel: "Geschäftliche E-Mail *",
-    emailPlaceholder: "ihre@email.com",
+    emailPlaceholder: "m.mustermann@firma.de",
     messageLabel: "Nachricht *",
     messagePlaceholder: "Beschreiben Sie Ihr Anliegen...",
     submitBtn: "Nachricht senden",

@@ -410,7 +410,7 @@ export const zh: TranslationSchema = {
     companyLabel: "公司",
     companyPlaceholder: "您的公司",
     emailLabel: "工作邮箱 *",
-    emailPlaceholder: "your@email.com",
+    emailPlaceholder: "zhang.san@gongsi.cn",
     messageLabel: "消息 *",
     messagePlaceholder: "请描述您的需求...",
     submitBtn: "发送消息",
