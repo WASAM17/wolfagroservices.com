@@ -285,6 +285,74 @@ const CONTENT: Record<Locale, {
       },
     ],
   },
+
+  es: {
+    title: 'Condiciones Generales de Uso',
+    subtitle: 'Sitio Wolf Agro Services — www.wolfagroservices.com',
+    lastUpdated: 'Última actualización: abril 2026',
+    sections: [
+      {
+        title: 'Presentación del sitio',
+        paragraphs: [
+          'El sitio www.wolfagroservices.com es publicado y gestionado por Wolf Agro Services, empresa especializada en el abastecimiento y exportación de productos agrícolas brutos, con sede social en Niamey, Níger.',
+          'Para cualquier pregunta relativa al sitio, puede contactarnos en: contact@wolfagroservices.com.',
+        ],
+      },
+      {
+        title: 'Objeto',
+        paragraphs: [
+          'Las presentes Condiciones Generales de Uso (CGU) tienen por objeto definir las modalidades y condiciones de acceso y uso del sitio web www.wolfagroservices.com, así como los derechos y obligaciones de los usuarios.',
+          'El uso del sitio implica la aceptación plena y total de las presentes CGU.',
+        ],
+      },
+      {
+        title: 'Acceso al sitio',
+        paragraphs: [
+          'El acceso al sitio es libre y gratuito. Wolf Agro Services se reserva el derecho de modificar, suspender o interrumpir en cualquier momento el acceso al sitio, en particular por razones de mantenimiento, actualización u otras limitaciones técnicas.',
+          'Wolf Agro Services no podrá ser considerado responsable en caso de indisponibilidad temporal del sitio.',
+        ],
+      },
+      {
+        title: 'Propiedad intelectual',
+        paragraphs: [
+          'El conjunto de elementos que constituyen el sitio (textos, fotografías, logotipos, estructura, código fuente) es propiedad exclusiva de Wolf Agro Services y está protegido por las leyes relativas a la propiedad intelectual.',
+          'Cualquier reproducción, representación, uso o adaptación, bajo cualquier forma, de la totalidad o parte de estos elementos, sin la autorización previa y escrita de Wolf Agro Services, está estrictamente prohibida.',
+        ],
+      },
+      {
+        title: 'Limitación de responsabilidad',
+        paragraphs: [
+          'La información y los documentos disponibles en el sitio se proporcionan a título indicativo y pueden ser modificados en cualquier momento sin previo aviso. Wolf Agro Services no podrá ser considerado responsable de los daños directos o indirectos resultantes del uso del sitio.',
+        ],
+      },
+      {
+        title: 'Hipervínculos',
+        paragraphs: [
+          'El sitio puede contener hipervínculos hacia sitios de terceros. Wolf Agro Services no ejerce ningún control sobre estos sitios y no podrá ser considerado responsable de su contenido o prácticas.',
+          'La creación de hipervínculos hacia www.wolfagroservices.com requiere la autorización previa de Wolf Agro Services.',
+        ],
+      },
+      {
+        title: 'Disponibilidad del servicio',
+        paragraphs: [
+          'Wolf Agro Services se esfuerza por garantizar la disponibilidad del sitio 24 h/24 y 7 d/7, pero no puede garantizar un acceso ininterrumpido.',
+        ],
+      },
+      {
+        title: 'Modificación de las CGU',
+        paragraphs: [
+          'Wolf Agro Services se reserva el derecho de modificar las presentes CGU en cualquier momento. Las modificaciones entran en vigor desde su publicación en línea.',
+        ],
+      },
+      {
+        title: 'Derecho aplicable y contacto',
+        paragraphs: [
+          'Las presentes CGU están sujetas al derecho aplicable. Cualquier litigio relativo al uso del sitio será sometido a la jurisdicción competente.',
+          'Para cualquier pregunta relativa a las presentes CGU, contáctenos en: contact@wolfagroservices.com',
+        ],
+      },
+    ],
+  },
 };
 
 const CGU = () => {

@@ -218,6 +218,73 @@ const CONTENT: Record<Locale, {
     ],
   },
 
+  es: {
+    title: 'Política de privacidad',
+    subtitle: 'Wolf Agro Services — Tratamiento de datos personales',
+    lastUpdated: 'Última actualización: abril 2026',
+    sections: [
+      {
+        title: 'Introducción',
+        paragraphs: [
+          'Wolf Agro Services (en adelante "la Sociedad") se compromete a proteger la privacidad de los usuarios de su sitio web www.wolfagroservices.com.',
+          'La presente política de privacidad describe los datos personales recogidos, su uso y los derechos de los que dispone.',
+        ],
+      },
+      {
+        title: 'Datos recogidos',
+        paragraphs: [
+          'En el marco del uso del sitio, Wolf Agro Services puede recoger los siguientes datos a través de sus formularios:',
+          'Formulario de contacto: nombre y apellido, empresa, dirección de email, mensaje.',
+          'Formulario de solicitud de oferta (RFQ): nombre y apellido, empresa, email profesional, teléfono, país de destino, producto deseado, volumen estimado, incoterm, puerto/destino, mensaje adicional.',
+          'Preferencias de navegación: idioma seleccionado (almacenado localmente via localStorage, sin transmisión a un servidor).',
+        ],
+      },
+      {
+        title: 'Finalidad y base legal',
+        paragraphs: [
+          'Los datos recogidos a través del formulario de contacto se utilizan para responder a sus solicitudes de información. La base legal es el interés legítimo de la Sociedad.',
+          'Los datos recogidos a través del formulario RFQ se utilizan para elaborar cotizaciones comerciales y mantener una relación comercial. La base legal es la ejecución de medidas precontractuales.',
+          'Los datos de preferencia de idioma solo se procesan localmente en su dispositivo y no se transmiten a la Sociedad.',
+        ],
+      },
+      {
+        title: 'Transmisión de datos',
+        paragraphs: [
+          'Los datos introducidos en los formularios se transmiten a Wolf Agro Services a través de EmailJS (servicio de enrutamiento de emails de terceros). EmailJS procesa estos datos únicamente para permitir el envío de los mensajes.',
+          'Wolf Agro Services no revende los datos personales a terceros.',
+        ],
+      },
+      {
+        title: 'Período de conservación',
+        paragraphs: [
+          'Los datos transmitidos a través de los formularios se conservan durante el tiempo necesario para el tratamiento de la solicitud y, en su caso, durante la duración de la relación comercial.',
+          'En ausencia de relación comercial establecida, los datos de contacto se conservan durante un período máximo de 3 años desde la última interacción.',
+        ],
+      },
+      {
+        title: 'Seguridad de los datos',
+        paragraphs: [
+          'Wolf Agro Services implementa las medidas técnicas y organizativas apropiadas para proteger sus datos personales contra cualquier acceso no autorizado, alteración, divulgación o destrucción.',
+          'Las comunicaciones entre su navegador y el sitio están cifradas mediante HTTPS.',
+        ],
+      },
+      {
+        title: 'Derechos de los usuarios',
+        paragraphs: [
+          'De conformidad con las reglamentaciones aplicables en materia de protección de datos, dispone de los siguientes derechos: derecho de acceso, derecho de rectificación, derecho de supresión, derecho de oposición, derecho a la limitación del tratamiento.',
+          'Para ejercer estos derechos, contáctenos por email en: contact@wolfagroservices.com indicando su solicitud.',
+        ],
+      },
+      {
+        title: 'Contacto',
+        paragraphs: [
+          'Para cualquier pregunta relativa a la presente política de privacidad o al tratamiento de sus datos personales, puede contactarnos en:',
+          'Email: contact@wolfagroservices.com — Wolf Agro Services, Niamey, Níger.',
+        ],
+      },
+    ],
+  },
+
   de: {
     title: 'Datenschutzerklärung',
     subtitle: 'Wolf Agro Services — Verarbeitung personenbezogener Daten',

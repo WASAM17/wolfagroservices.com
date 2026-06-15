@@ -174,6 +174,58 @@ const CONTENT: Record<Locale, {
     ],
   },
 
+  es: {
+    title: 'Política de cookies',
+    subtitle: 'Wolf Agro Services — Uso de cookies',
+    lastUpdated: 'Última actualización: abril 2026',
+    sections: [
+      {
+        title: '¿Qué es una cookie?',
+        paragraphs: [
+          'Una cookie es un pequeño archivo de texto depositado en su dispositivo (ordenador, smartphone, tableta) durante su visita a un sitio web. Permite al sitio recordar cierta información relativa a su navegación.',
+          'Las cookies no contienen virus y no pueden utilizarse para identificarle personalmente sin su consentimiento.',
+        ],
+      },
+      {
+        title: 'Cookies utilizadas en este sitio',
+        paragraphs: [
+          'El sitio www.wolfagroservices.com utiliza un número limitado de cookies, estrictamente necesarias para su correcto funcionamiento y para mejorar su experiencia.',
+          'No se utiliza ninguna cookie publicitaria, píxel de seguimiento de terceros ni herramienta de análisis de comportamiento en este sitio.',
+        ],
+      },
+      {
+        title: 'Cookies estrictamente necesarias',
+        paragraphs: [
+          'Estas cookies son indispensables para el funcionamiento del sitio y no pueden desactivarse.',
+          'wolf-locale: memoriza su preferencia de idioma (francés, inglés, alemán, chino, español). Duración: persistente (localStorage).',
+          'wolf-cookie-consent: registra su elección respecto a las cookies (aceptado o rechazado). Duración: persistente (localStorage).',
+          'Estos datos se almacenan localmente en su dispositivo a través del mecanismo localStorage del navegador y no se transmiten a servidores de terceros.',
+        ],
+      },
+      {
+        title: 'Cookies analíticas y de terceros',
+        paragraphs: [
+          'A día de hoy, www.wolfagroservices.com no utiliza cookies analíticas (Google Analytics, Matomo, etc.) ni cookies procedentes de redes sociales o agencias publicitarias.',
+          'Si en el futuro se integran herramientas de análisis, esta política se actualizará y se recabará su consentimiento con carácter previo.',
+        ],
+      },
+      {
+        title: 'Gestión del consentimiento',
+        paragraphs: [
+          'En su primera visita al sitio, un banner le informa sobre el uso de cookies y le ofrece la posibilidad de aceptar o rechazar.',
+          'Su elección se memoriza mediante el elemento wolf-cookie-consent. Puede modificar su preferencia en cualquier momento eliminando este elemento desde la configuración de su navegador.',
+        ],
+      },
+      {
+        title: 'Modificar sus preferencias',
+        paragraphs: [
+          'Para eliminar las cookies almacenadas por este sitio, puede vaciar el localStorage de su navegador a través de las herramientas de desarrollador (F12 > Aplicación > Almacenamiento local > eliminar las entradas wolf-locale y wolf-cookie-consent).',
+          'Para cualquier pregunta: contact@wolfagroservices.com',
+        ],
+      },
+    ],
+  },
+
   de: {
     title: 'Cookie-Richtlinie',
     subtitle: 'Wolf Agro Services — Cookie-Verwendung',

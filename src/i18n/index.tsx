@@ -5,17 +5,19 @@ import { fr } from './locales/fr';
 import { en } from './locales/en';
 import { zh } from './locales/zh';
 import { de } from './locales/de';
+import { es } from './locales/es';
 import type { TranslationSchema } from './locales/fr';
 
-export type Locale = 'fr' | 'en' | 'zh' | 'de';
+export type Locale = 'fr' | 'en' | 'zh' | 'de' | 'es';
 
-const locales: Record<Locale, TranslationSchema> = { fr, en, zh, de };
+const locales: Record<Locale, TranslationSchema> = { fr, en, zh, de, es };
 
 export const LOCALE_LABELS: Record<Locale, string> = {
   fr: 'FR',
   en: 'EN',
   zh: '中文',
   de: 'DE',
+  es: 'ES',
 };
 
 interface LanguageContextType {
