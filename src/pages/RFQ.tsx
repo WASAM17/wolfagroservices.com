@@ -123,9 +123,9 @@ const RFQ = () => {
                       {r.yourInfo}
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <Field label={r.nameLabel} id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder="Jean Dupont" />
-                      <Field label={r.companyLabel} id="company" name="company" type="text" required value={form.company} onChange={handleChange} placeholder="Votre entreprise" />
-                      <Field label={r.emailLabel} id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="votre@email.com" />
+                      <Field label={r.nameLabel} id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder={r.namePlaceholder} />
+                      <Field label={r.companyLabel} id="company" name="company" type="text" required value={form.company} onChange={handleChange} placeholder={r.companyPlaceholder} />
+                      <Field label={r.emailLabel} id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder={r.emailPlaceholder} />
                       <Field label={r.phoneLabel} id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder={r.phonePlaceholder} />
                       <Field label={r.countryLabel} id="country" name="country" type="text" required value={form.country} onChange={handleChange} placeholder={r.countryPlaceholder} />
                     </div>
