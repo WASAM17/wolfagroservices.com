@@ -27,6 +27,7 @@ const Footer = () => {
     [t.nav.sesame, '/produits/sesame'],
     [t.nav.onion, '/produits/oignon-galmi'],
     [t.nav.peanut, '/produits/arachide'],
+    [t.nav.souchet, '/produits/souchet'],
   ] as const;
 
   return (
